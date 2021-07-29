@@ -28,42 +28,66 @@ The multiplayer component is that if you reach the end of the "adventure" by fol
 https://parm.app/
 
 ### Development
+Fetch code and start dev server.
 ```sh
-# fetch code and start dev server
 git clone https://github.com/prmichaelsen/parm.git
+```
+
+Install dependencies.
+```
 npm i
-
-# fill this with the requisite secrets
-touch ./env/parm-app.json
-```
-You'll need some secrets, reach out to me if you want to run this locally and I can work with you.
-
-```
-  mkdir ~/.npm-global
-  npm config set prefix '~/.npm-global'
-  export PATH=~/.npm-global/bin:$PATH
-  source ~/.profile
 ```
 
- [Stack Overflow Post](https://stackoverflow.com/questions/54802330/missing-write-access-in-mac-to-usr-local-lib-node-modules) 
+You will need run some utlity scripts to setup your environment before it will build correctly.
+The ultility scripts depend on `ts-node`, so you will need to install `ts-node` as a global dependency in order to run them.
 
+If this is your first time using `npm`, you should probably set your npm `prefix` in your `config` to a sub-directory of your `$HOME` (or shorthand, `~`).
+
+See [this stack overflow post](https://stackoverflow.com/questions/54802330/missing-write-access-in-mac-to-usr-local-lib-node-modules) for an explanation why you would do this.
+
+```
+mkdir ~/.npm-global;
+npm config set prefix '~/.npm-global';
+touch ~/.profile;
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.profile;
+source ~/.profile;
+```
+
+> _on a unix-like system: touch creates a file, echo ... >> ... appends to a file, source (or shorthand, `.`) loads the .profile configuration into your current terminal session, and ~/.profile is a special config file that is loaded each time a terminal session is initiated
+
+Now, install `ts-node` globally via:
 ```
 npm i -g ts-node
+```
+
+You'll need some "admin secrets", reach out to me if you want to run this locally and I can work with you.
+
+Alternatively, you may supply your own secrets to run your own admin database. As of 2021 Jul, no one has done that, so update this document accordingly with your learnings.
+
+Once you have the admin secrets, you will fetch additional "service secrets" secrets from the secret vault.
+```
 ./tools/scripts/f5/fetch-secrets.ts
 ```
+This file uses a shebang to set the "intepreter" to ts-node so you can run a .ts 
+file as though typescript was running through an intepreter without having to 
+transpile to javascript first. 📸
+
+Now we're ready to start the app (finally).
 
 Run a specific app for local development:
 ```sh
-npm run nx run f5:serve:parm 
+npm run nx serve f5 -c parm
 ```
+The `-c` flag allows you select a specific configuration for the `serve` architect.
+To see the architects and configs avaiable, view the `workspace.json` at the root of this repository.
+For information on a `workspace.json`, refer to the official `nx` documenation.
 
 For more dev info, see [DEV_README](./DEV_README.md).
 
 ## Deployment
-To deploy all f5 apps:
+To deploy an f5 app:
 ```sh
-# *requires npm i -g typescript ts-node
-./tools/scripts/f5/0-deploy.ts
+./tools/scripts/f5/0-deploy.ts APP_NAME
 ```
 
 This script:
