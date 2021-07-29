@@ -31,16 +31,30 @@ https://parm.app/
 ```sh
 # fetch code and start dev server
 git clone https://github.com/prmichaelsen/parm.git
-npm i && npm i -g @nrwl/cli
+npm i
+
 # fill this with the requisite secrets
 touch ./env/parm-app.json
-nx serve f5
 ```
 You'll need some secrets, reach out to me if you want to run this locally and I can work with you.
 
+```
+  mkdir ~/.npm-global
+  npm config set prefix '~/.npm-global'
+  export PATH=~/.npm-global/bin:$PATH
+  source ~/.profile
+```
+
+ [Stack Overflow Post](https://stackoverflow.com/questions/54802330/missing-write-access-in-mac-to-usr-local-lib-node-modules) 
+
+```
+npm i -g ts-node
+./tools/scripts/f5/fetch-secrets.ts
+```
+
 Run a specific app for local development:
 ```sh
-nx run f5:serve:parm 
+npm run nx run f5:serve:parm 
 ```
 
 For more dev info, see [DEV_README](./DEV_README.md).
