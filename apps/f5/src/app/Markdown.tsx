@@ -28,6 +28,9 @@ import { CardList, CardDeck } from './AdvancedCards';
 import { GoogleMe } from './GoogleMe';
 import { Alias } from './Alias';
 import { Romaine } from './Romaine';
+import PhotoReleaseConsentForm from './PhotoReleaseConsentForm';
+
+
 
 export const Markdown = ({ children }) => {
   const { isDark } = useThemePrefs();
@@ -82,6 +85,7 @@ export const Markdown = ({ children }) => {
         GoogleMe,
         Alias,
         Romaine,
+        PhotoReleaseConsentForm,
       },
     }}>
       {children}

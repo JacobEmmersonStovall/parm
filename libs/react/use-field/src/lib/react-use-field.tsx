@@ -39,3 +39,9 @@ export const useField = (props: UseFieldProps) => {
     value: _value, field
   };
 }
+
+export type UseFieldsProps = Array<UseFieldProps>;
+
+export const useFields = (props: UseFieldsProps) => {
+  return props.map(p => useField(p));
+};
