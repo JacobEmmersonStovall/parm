@@ -72,6 +72,13 @@ This file uses a shebang to set the "intepreter" to ts-node so you can run a .ts
 file as though typescript was running through an intepreter without having to 
 transpile to javascript first. 📸
 
+To prepare app `parm` for dev we must first `pre-bundle` it. This configures
+some options in the `workspace.json` and creates some additional source
+files with some application metadata.
+```
+./tools/scripts/f5/0-deploy.ts parm pre-bundle
+```
+
 Now we're ready to start the app (finally).
 
 Run a specific app for local development:
@@ -85,7 +92,12 @@ For information on a `workspace.json`, refer to the official `nx` documenation.
 For more dev info, see [DEV_README](./DEV_README.md).
 
 ## Deployment
-To deploy an f5 app:
+Login with firebase. Then:
+```
+firebase use --add parm-app
+```
+
+Now, deploy an f5 app:
 ```sh
 ./tools/scripts/f5/0-deploy.ts APP_NAME
 ```
