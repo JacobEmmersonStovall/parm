@@ -28,10 +28,10 @@ export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => 
     date,
   ] = useFields([
     { label: 'Full Name', value: '', validate },
-    { label: 'Email', value: '' , validate },
+    { label: 'Email', value: '' , validate, type: 'email' },
     { label: 'Instagram', value: '', validate },
     { label: 'Signature', value: '', validate },
-    { label: 'Date', value: '', validate },
+    { label: 'Date', value: '', validate, type: 'date' },
   ]);
   return (
     <div>

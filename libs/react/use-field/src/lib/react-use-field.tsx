@@ -9,12 +9,14 @@ interface UseFieldProps {
   validate?: (value: string) => boolean;
   placeholder?: string;
   multiline?: boolean;
+  type: string;
 }
 
 export const useField = (props: UseFieldProps) => {
   const {
     value, label, validate = () => true,
     placeholder = '', multiline = false,
+    type = '',
   } = props;
   const [_value, setValue] = useState(value);
   const [hasBlurred, setBlurred] = useState(false);
@@ -24,6 +26,7 @@ export const useField = (props: UseFieldProps) => {
   };
   const field = (
     <TextField
+      type={type}
       style={{ width: '100%' }}
       label={label}
       placeholder={placeholder}
