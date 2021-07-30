@@ -64,8 +64,8 @@ export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => 
 
       <br/>
 
-      I <strong>{fullname.value || '______________'}</strong> hereby grant to 
-       <strong>Silicon Visual Productions L.L.C.</strong> and any licensees, agents, 
+      I <strong>{fullname.value || '______________'}</strong> hereby grant 
+      to <strong>Silicon Visual Productions L.L.C.</strong> and any licensees, agents, 
       and assignees thereof (“Producer”) the perpetual, 
       irrevocable, global and unrestricted right to use, reproduce, publish and copyright 
       (collectively, "Use") my picture, likeness, and voice (collectively, "Image") 
