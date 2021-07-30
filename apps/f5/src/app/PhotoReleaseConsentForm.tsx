@@ -29,6 +29,7 @@ export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => 
     { label: 'Signature', value: '', validate },
     { label: 'Date', value: '', validate },
   ]);
+  const agreeAnchor = '/?focus=photo-release#agree';
   return (
     <div>
 
@@ -61,10 +62,10 @@ export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => 
       <br/>
       <Grid container>
         <Grid item container xs={6}>
-          <a href="#agree">Scroll to bottom & sign</a>
+          <a href={agreeAnchor}>Scroll to bottom & sign</a>
         </Grid>
         <Grid item container xs={6} direction="row-reverse">
-          <a href="#agree">Scroll to bottom & sign</a>
+          <a href={agreeAnchor}>Scroll to bottom & sign</a>
         </Grid>
       </Grid>
       <br/>
