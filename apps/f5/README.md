@@ -53,7 +53,7 @@ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.profile;
 source ~/.profile;
 ```
 
-> _on a unix-like system: touch creates a file, echo ... >> ... appends to a file, source (or shorthand, `.`) loads the .profile configuration into your current terminal session, and ~/.profile is a special config file that is loaded each time a terminal session is initiated
+> on a unix-like system: touch creates a file, echo ... >> ... appends to a file, source (or shorthand, `.`) loads the .profile configuration into your current terminal session, and ~/.profile is a special config file that is loaded each time a terminal session is initiated
 
 Now, install `ts-node` globally via:
 ```
