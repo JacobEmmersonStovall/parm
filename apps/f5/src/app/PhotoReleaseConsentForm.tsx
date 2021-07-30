@@ -3,6 +3,7 @@ import React from 'react';
 
 import { useFields } from '@parm/react/use-field';
 import Grid from '@material-ui/core/Grid';
+import { StringParam, useQueryParams } from 'use-query-params';
 
 /* eslint-disable-next-line */
 export interface PhotoReleaseConsentFormProps {
@@ -11,6 +12,9 @@ export interface PhotoReleaseConsentFormProps {
 const validate = (value: string) => value.trim() !== '';
 
 export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => {
+  const [{ focus }, setQuery] = useQueryParams({
+    focus: StringParam,
+  });
   const submit = async () => {
     console.log({
       fullname, email, instagram, signature, date
@@ -29,7 +33,6 @@ export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => 
     { label: 'Signature', value: '', validate },
     { label: 'Date', value: '', validate },
   ]);
-  const agreeAnchor = '/?focus=photo-release#agree';
   return (
     <div>
 
@@ -60,19 +63,9 @@ export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => 
       </div>
 
       <br/>
-      <Grid container>
-        <Grid item container xs={6}>
-          <a href={agreeAnchor}>Scroll to bottom & sign</a>
-        </Grid>
-        <Grid item container xs={6} direction="row-reverse">
-          <a href={agreeAnchor}>Scroll to bottom & sign</a>
-        </Grid>
-      </Grid>
-      <br/>
-      <br/>
 
       I <strong>{fullname.value || '______________'}</strong> hereby grant to 
-      <strong>Silicon Visual Productions L.L.C.</strong> and any licensees, agents, 
+       <strong>Silicon Visual Productions L.L.C.</strong> and any licensees, agents, 
       and assignees thereof (“Producer”) the perpetual, 
       irrevocable, global and unrestricted right to use, reproduce, publish and copyright 
       (collectively, "Use") my picture, likeness, and voice (collectively, "Image") 
@@ -117,9 +110,6 @@ export const PhotoReleaseConsentForm = (props: PhotoReleaseConsentFormProps) => 
       <br/>
       <br/>
 
-      <a name="agree"></a>
-      <br/>
-      <br/>
       <strong>Sign below:</strong>
 
       <Grid container spacing={1}>
