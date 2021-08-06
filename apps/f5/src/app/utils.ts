@@ -45,6 +45,7 @@ export const generateTemplateString = (function () {
 export const getImageUrl: ({ filename: string }) => string =
   generateTemplateString(`https://storage.googleapis.com/${bucketName}/${ImagesStore}/\${filename}`);
 
+
 /**
  * TODO: cloud logging
  */

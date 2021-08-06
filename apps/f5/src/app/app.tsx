@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Container, CssBaseline, ThemeProvider, Theme, createMuiTheme, Typography } from '@material-ui/core';
-import Adventure from './Adventure';
 import { useThemePrefs } from './hooks';
+import Main from './Main';
 
 const withContainer = (Component: React.ComponentType) => () => {
   const { theme } = useThemePrefs(); 
@@ -23,7 +23,7 @@ export const App = withContainer(() => {
    * Note: The corresponding styles are in the ./app.scss file.
    */
   return (
-    <Adventure />
+    <Main/>
   );
 });
 

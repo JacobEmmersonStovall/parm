@@ -33,6 +33,7 @@ import uuidv1 from 'uuid/v1';
 import { getImageUrl, log } from './utils';
 import defaultNodes from './defaultNodes';
 import { StringParam, useQueryParams } from 'use-query-params';
+import { useFilter } from '@parm/react/filter-control';
 
 export interface RoleDocument {
   roles: string[];
@@ -366,7 +367,15 @@ export function useData() {
       return s;
       })()));
   }, [state.stateId]);
+  const { 
+    filter: filterPredicate,
+    control: filterControl
+  } = useFilter();
   return {
+    filter: {
+      predicate: filterPredicate,
+      control: filterControl,
+    },
     state,
     setCurrent,
     createOption,

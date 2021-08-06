@@ -1,0 +1,12 @@
+# no need to commit this file
+# as it is generated each time
+# as part of the post-bundle
+# step.
+src/index.local.html
+
+# default fav ico is committed
+# overwrites need not be committed
+# because real favico for each app
+# is written to disk during 
+# post-bundle step.
+src/favicon.ico

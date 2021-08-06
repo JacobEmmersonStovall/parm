@@ -770,6 +770,7 @@
             "polyfills": "apps/f5/src/polyfills.ts",
             "tsConfig": "apps/f5/tsconfig.app.json",
             "assets": [
+              "apps/f5/src/meta.image.hexd.png",
               "apps/f5/src/favicon.ico",
               "apps/f5/src/assets"
             ],
@@ -888,6 +889,26 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/hexd.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Adventure.tsx",
+                  "with": "apps/f5/src/app/Adventure.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/CurrentCard.tsx",
+                  "with": "apps/f5/src/app/CurrentCard.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Header.tsx",
+                  "with": "apps/f5/src/app/Header.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.hexd.tsx"
                 }
               ]
             },
@@ -918,11 +939,12 @@
           "builder": "@nrwl/web:build",
           "options": {
             "outputPath": "dist/apps/f5",
-            "index": "apps/f5/src/index.html",
+            "index": "apps/f5/src/index.local.html",
             "main": "apps/f5/src/main.tsx",
             "polyfills": "apps/f5/src/polyfills.ts",
             "tsConfig": "apps/f5/tsconfig.app.json",
             "assets": [
+              "apps/f5/src/meta.image.hexd.png",
               "apps/f5/src/favicon.ico",
               "apps/f5/src/assets"
             ],
@@ -1021,6 +1043,26 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/hexd.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Adventure.tsx",
+                  "with": "apps/f5/src/app/Adventure.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/CurrentCard.tsx",
+                  "with": "apps/f5/src/app/CurrentCard.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Header.tsx",
+                  "with": "apps/f5/src/app/Header.hexd.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.hexd.tsx"
                 }
               ]
             },
@@ -1603,6 +1645,73 @@
             "commands": [
               {
                 "command": "gcloud functions deploy functionGoogleMe --trigger-http --runtime nodejs10 --region us-central1 --env-vars-file ./dist/apps/function-google-me/.production.yaml --source ./dist/apps/function-google-me --max-instances 10 --allow-unauthenticated"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "function-send-email": {
+      "root": "apps/function-send-email",
+      "sourceRoot": "apps/function-send-email/src",
+      "projectType": "application",
+      "prefix": "function-send-email",
+      "schematics": {},
+      "architect": {
+        "serve": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx @google-cloud/functions-framework --target functionSendEmail --source ./dist/apps/function-send-email"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/function-send-email/tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/function-send-email/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/function-send-email/jest.config.js",
+            "tsConfig": "apps/function-send-email/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@joelcode/gcp-function:build",
+          "options": {
+            "outputPath": "dist/apps/function-send-email",
+            "main": "apps/function-send-email/src/index.ts",
+            "yamlConfig": "apps/function-send-email/src/environments/.production.yaml",
+            "tsConfig": "apps/function-send-email/tsconfig.app.json",
+            "packageJson": "apps/function-send-email/package.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false
+            }
+          }
+        },
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "gcloud functions deploy functionSendEmail --trigger-http --runtime nodejs10 --region us-central1 --env-vars-file ./dist/apps/function-send-email/.production.yaml --source ./dist/apps/function-send-email --max-instances 10 --allow-unauthenticated"
               }
             ]
           }

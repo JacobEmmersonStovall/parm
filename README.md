@@ -190,7 +190,6 @@ Secrets management:
 * https://cloud.google.com/functions/docs/env-var
 
 ```
-npm run nx -- deploy FUNCTION_NAME --set-env-vars FOO=bar
 npm run nx -- build function-name
 # test the changes locally
 npm run nx -- serve function-name 

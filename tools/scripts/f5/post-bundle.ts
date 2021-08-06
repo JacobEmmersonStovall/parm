@@ -27,28 +27,44 @@ export const postBundle = async (appNames = []) => {
     .forEach(async app => {
       console.log(`post-bundling ${app.app}...`);
       const dist = resolve(`./dist/apps/${app.app}`);
+      const src = resolve(`./apps/f5/src/`);
       mkdirp.sync(dist);
+
+      // grab favico
+      const bucket = `parm-app.appspot.com`;
+      const faviconUrl = `favicon.ico`;
+
+      const writeFavicon = async (path) => {
+        // write favicon.ico
+        const options = {
+          destination: resolve(path + `/favicon.ico`),
+        };
+
+        // await firebase
+        // (writes to file specified by 'options')
+        await firebase()
+          .storage()
+          .bucket(bucket)
+          .file(`${app.app}/favicon.ico`)
+          .download(options)
+          ;
+      }
+      
+      await writeFavicon(dist);
+      await writeFavicon(src);
 
       // write index.html
       (() => {
-        const wt = resolve(dist + `/index.html`);
-        const file = nunjucks.render('./templates/index.njk', app);
-        fs.writeFileSync(wt, file, 'utf8');
+        const distWt = resolve(dist + `/index.html`);
+        const localWt = resolve(src + `/index.local.html`);
+        const file = nunjucks.render('./templates/index.njk', {
+          faviconUrl,
+          ...app,
+        });
+        fs.writeFileSync(distWt, file, 'utf8');
+        fs.writeFileSync(localWt, file, 'utf8');
       })();
 
-      // write favicon.ico
-      const options = {
-        destination: resolve(dist + `/favicon.ico`),
-      };
-      // const bucket = (`app-${app.app}`);
-      const bucket = 'parm-app.appspot.com';
-      // await firebase
-      await firebase()
-        .storage()
-        .bucket(bucket)
-        .file('f5/favicon.ico')
-        .download(options)
-        ;
       // update the firebase.json
       (() => {
         const fb = require('../../../firebase.json');
