@@ -841,6 +841,10 @@
                 {
                   "replace": "apps/f5/src/app/EndMessage.tsx",
                   "with": "apps/f5/src/app/EndMessage.parm.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.parm.tsx"
                 }
               ]
             },
@@ -995,6 +999,10 @@
                 {
                   "replace": "apps/f5/src/app/EndMessage.tsx",
                   "with": "apps/f5/src/app/EndMessage.parm.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.parm.tsx"
                 }
               ]
             },
