@@ -131,7 +131,6 @@ See `./tools/scripts/f5/backup.ts` for a method to download all firestore data.
 
 ### Roadmap
 * loading button 🔴9️⃣
-* node aliases 🔴9️⃣
 * node repository / browser for discovering and easily adding common nodes 🟡9️⃣
 * unfurl nodes (react helmet or static rendering on backend for external page loads) 🟡9️⃣
 * tweak UI to be less frustrating 🟡6️⃣
@@ -160,6 +159,7 @@ See `./tools/scripts/f5/backup.ts` for a method to download all firestore data.
 
 ### Completed Roadmap
 The newest features are at the top of this list.
+* node aliases 🔴9️⃣
 * generalize core code for use in other apps 0️⃣
 * theming
 * tap to show menu 🟢9️⃣
