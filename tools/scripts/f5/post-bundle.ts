@@ -12,6 +12,28 @@ nunjucks.configure({
   autoescape: false,
 });
 
+
+const writeStorage = async ({
+  writePath,
+  storagePath,
+  bucket,
+  appName
+}) => {
+  // write favicon.ico
+  const options = {
+    destination: resolve(`${writePath}/${storagePath}`),
+  };
+
+  // await firebase
+  // (writes to file specified by 'options')
+  await firebase()
+    .storage()
+    .bucket(bucket)
+    .file(`${appName}/${storagePath}`)
+    .download(options)
+    ;
+}
+
 export const postBundle = async (appNames = []) => {
   const env = environment();
   const collection = `${env}.parm.f5.apps`;
@@ -33,25 +55,31 @@ export const postBundle = async (appNames = []) => {
       // grab favico
       const bucket = `parm-app.appspot.com`;
       const faviconUrl = `favicon.ico`;
-
-      const writeFavicon = async (path) => {
-        // write favicon.ico
-        const options = {
-          destination: resolve(path + `/favicon.ico`),
-        };
-
-        // await firebase
-        // (writes to file specified by 'options')
-        await firebase()
-          .storage()
-          .bucket(bucket)
-          .file(`${app.app}/favicon.ico`)
-          .download(options)
-          ;
-      }
       
-      await writeFavicon(dist);
-      await writeFavicon(src);
+      await writeStorage({
+        writePath: dist,
+        storagePath: 'favicon.ico',
+        bucket,
+        appName: app.app,
+      });
+      await writeStorage({
+        writePath: src,
+        storagePath: 'favicon.ico',
+        bucket,
+        appName: app.app,
+      });
+      await writeStorage({
+        writePath: dist,
+        storagePath: `meta.image.png`,
+        bucket,
+        appName: app.app,
+      });
+      await writeStorage({
+        writePath: src,
+        storagePath: 'meta.image.png',
+        bucket,
+        appName: app.app,
+      });
 
       // write index.html
       (() => {

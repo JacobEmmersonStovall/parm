@@ -1,5 +1,17 @@
 # Parm
 
+>August 7 2021
+
+The primary development focus of this repository has become the website-as-a-service application [f5](./apps/f5/README.md).
+### What is f5?
+F5 is an open source website-as-a-serve & component library built in React, Typescript, Nx, and Firebase. The project supports vending websites and blogs to anyone who requires one, free-of-charge.
+
+### Why is f5?
+The project is designed to disrupt the website-as-a-service industry by giving away all code for free. All internal components are also vended as npm packages.
+
+I envision a future where anyone can build a web app in minutes, thereby dropping the barrier to entry of sectors like social media, content creator subscription, and personal websites by hundreds of thousands of dollars. My view is that you shouldn't have to be a corporation to compete in this sector.
+
+
 This project was generated using [Nx](https://nx.dev).
 
 To get the most out of Nx, consider the Nx console vs code plugin.

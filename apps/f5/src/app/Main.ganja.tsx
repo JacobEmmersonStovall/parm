@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardScroller } from './CardScroller';
+import { CreateCard } from './CreateCard';
 import { CurrentCard } from './CurrentCard';
 import { Description } from './Description';
 import { HeaderImage } from './HeaderImage';
@@ -11,7 +11,8 @@ export default function Adventure(props) {
     <div className={classes.paper}>
       <HeaderImage/>
       <Description/>
-      <CardScroller/>
+      {/* <CreateCard/> */}
+      <CurrentCard/>
     </div>
   );
 }

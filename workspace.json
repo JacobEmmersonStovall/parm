@@ -770,7 +770,7 @@
             "polyfills": "apps/f5/src/polyfills.ts",
             "tsConfig": "apps/f5/tsconfig.app.json",
             "assets": [
-              "apps/f5/src/meta.image.hexd.png",
+              "apps/f5/src/meta.image.png",
               "apps/f5/src/favicon.ico",
               "apps/f5/src/assets"
             ],
@@ -936,6 +936,40 @@
                   "with": "apps/f5/src/app/EndMessage.supreme.tsx"
                 }
               ]
+            },
+            "ganja": {
+              "outputPath": "dist/apps/ganja",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/ganja.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.ganja.tsx"
+                }
+              ]
+            },
+            "cindy": {
+              "outputPath": "dist/apps/cindy",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/cindy.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Adventure.tsx",
+                  "with": "apps/f5/src/app/Adventure.cindy.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.cindy.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.cindy.tsx"
+                }
+              ]
             }
           }
         },
@@ -948,7 +982,7 @@
             "polyfills": "apps/f5/src/polyfills.ts",
             "tsConfig": "apps/f5/tsconfig.app.json",
             "assets": [
-              "apps/f5/src/meta.image.hexd.png",
+              "apps/f5/src/meta.image.png",
               "apps/f5/src/favicon.ico",
               "apps/f5/src/assets"
             ],
@@ -1094,6 +1128,40 @@
                   "with": "apps/f5/src/app/EndMessage.supreme.tsx"
                 }
               ]
+            },
+            "ganja": {
+              "outputPath": "dist/apps/ganja",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/ganja.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.ganja.tsx"
+                }
+              ]
+            },
+            "cindy": {
+              "outputPath": "dist/apps/cindy",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/cindy.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Adventure.tsx",
+                  "with": "apps/f5/src/app/Adventure.cindy.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.cindy.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.cindy.tsx"
+                }
+              ]
             }
           }
         },
@@ -1130,6 +1198,12 @@
             },
             "supreme": {
               "buildTarget": "f5:build:supreme"
+            },
+            "ganja": {
+              "buildTarget": "f5:build:ganja"
+            },
+            "cindy": {
+              "buildTarget": "f5:build:cindy"
             }
           }
         },

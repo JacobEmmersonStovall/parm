@@ -22,6 +22,7 @@ export const EmailRegister = () => {
     if (user)
       return;
     ui.start(`#${id}`, {
+      popupMode: true,
       callbacks: {
         signInSuccessWithAuthResult: () => false,
       },
@@ -35,7 +36,11 @@ export const EmailRegister = () => {
   }, [user]);
 
   if (user) {
-    return `Signed in as ${user}`;
+    return (
+      <div>
+        {`Signed in as ${user}`}
+      </div>
+    )
   }
 
   return (
