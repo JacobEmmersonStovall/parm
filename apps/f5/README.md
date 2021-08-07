@@ -146,6 +146,7 @@ See `./tools/scripts/f5/backup.ts` for a method to download all firestore data.
 * unfurl nodes (react helmet or static rendering on backend for external page loads) 🟡9️⃣
 * tweak UI to be less frustrating 🟡6️⃣
 * duplicating nodes 🟡6️⃣
+* censoring feature (my mom doesn't like all the nasty words i use in my blog. i will add a feature that allows a find and replace to swap out naughty words with words like "frick" and "gosh") 🟡6️⃣ 
 * edit node id: duplicate node, update references to old node id to use new node id in other nodes, update old node to be an interstitial page that redirects to the new node 🟡6️⃣
 * slide show cards (group cards in a specific order and allow swiping left to right to navigate them) 🟡3️⃣
 * spa nav for node links 🟢9️⃣
