@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{title}}</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="og:title" content="{{metaTitle}}"/>
+    <meta name="og:description" content="{{metaDescription}}"/>
+    <link rel="icon" type="image/x-icon" href="{{faviconUrl}}" />
+    <meta name="og:image" content="meta.image.png"/>
+    <meta name="og:image:secure" content="meta.image.png"/>
+    <meta name="image" content="meta.image.png"/>
+    <meta name="twitter:title" content="{{metaTitle}}">
+    <meta name="twitter:description" content="{{metaDescription}}">
+    <meta name="twitter:image" content="meta.image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- 
+      fix issue with global undefined for snoowrap inclusion
+      https://stackoverflow.com/questions/50356408/upgrading-to-angular-6-x-gives-uncaught-referenceerror-global-is-not-defined
+    -->
+    <script>
+      var global = global || window;
+    </script>
+
+    <!--
+      remove mobile touch "delay" that makes buttons
+      not feel responsive on mobile
+      https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away 
+    -->
+    <meta name="viewport" content="width=device-width"> 
+  </head>
+  <body>
+    <div id="root">
+      {{text}}
+    </div>
+  </body>
+  <script src="runtime.js" type="module"></script><script src="polyfills.js" type="module"></script><script src="styles.js" type="module"></script><script src="vendor.js" type="module"></script><script src="main.js" type="module"></script></body>
+</html>

@@ -907,10 +907,6 @@
                   "with": "apps/f5/src/app/CurrentCard.hexd.tsx"
                 },
                 {
-                  "replace": "apps/f5/src/app/Header.tsx",
-                  "with": "apps/f5/src/app/Header.hexd.tsx"
-                },
-                {
                   "replace": "apps/f5/src/app/Main.tsx",
                   "with": "apps/f5/src/app/Main.hexd.tsx"
                 }
@@ -1097,10 +1093,6 @@
                 {
                   "replace": "apps/f5/src/app/CurrentCard.tsx",
                   "with": "apps/f5/src/app/CurrentCard.hexd.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/Header.tsx",
-                  "with": "apps/f5/src/app/Header.hexd.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -1794,6 +1786,67 @@
             "commands": [
               {
                 "command": "gcloud functions deploy functionSendEmail --trigger-http --runtime nodejs10 --region us-central1 --env-vars-file ./dist/apps/function-send-email/.production.yaml --source ./dist/apps/function-send-email --max-instances 10 --allow-unauthenticated"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "function-generate-static-node-view": {
+      "root": "apps/function-generate-static-node-view",
+      "sourceRoot": "apps/function-generate-static-node-view/src",
+      "projectType": "application",
+      "prefix": "function-generate-static-node-view",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/function-generate-static-node-view/tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/function-generate-static-node-view/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/function-generate-static-node-view/jest.config.js",
+            "tsConfig": "apps/function-generate-static-node-view/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@joelcode/gcp-function:build",
+          "options": {
+            "outputPath": "dist/apps/function-generate-static-node-view",
+            "main": "apps/function-generate-static-node-view/src/index.ts",
+            "yamlConfig": "apps/function-generate-static-node-view/src/environments/.production.yaml",
+            "tsConfig": "apps/function-generate-static-node-view/tsconfig.app.json",
+            "packageJson": "apps/function-generate-static-node-view/package.json",
+            "assets": [
+              "apps/function-generate-static-node-view/src/index.njk",
+              "apps/function-generate-static-node-view/src/env/parm-names-not-numbers.json"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false
+            }
+          }
+        },
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "gcloud functions deploy functionGenerateStaticNodeView --trigger-topic writeEvent --runtime nodejs10 --region us-central1 --env-vars-file ./dist/apps/function-generate-static-node-view/.production.yaml --source ./dist/apps/function-generate-static-node-view --max-instances 10 --allow-unauthenticated"
               }
             ]
           }

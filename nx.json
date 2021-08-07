@@ -131,6 +131,9 @@
     },
     "function-send-email": {
       "tags": []
+    },
+    "function-generate-static-node-view": {
+      "tags": []
     }
   }
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { CardScroller } from './CardScroller';
-import { CurrentCard } from './CurrentCard';
 import { Description } from './Description';
 import { HeaderImage } from './HeaderImage';
 import { useStyles } from './useStyles';

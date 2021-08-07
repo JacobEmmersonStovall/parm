@@ -39,6 +39,8 @@ export interface RoleDocument {
   roles: string[];
 }
 
+// TODO extract into 3rd party
+// lib
 export type OptionType =
 | 'prompt'
 | 'action'
@@ -46,6 +48,8 @@ export type OptionType =
 | 'image'
 ;
 
+// TODO extract into 3rd party
+// lib
 export interface Option {
   parent: string;
   children: string[];
