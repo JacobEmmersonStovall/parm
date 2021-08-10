@@ -2,52 +2,12 @@
   "targets": {
     "parm-app": {
       "hosting": {
-        "streamster": [
-          "streamster-tools"
-        ],
-        "stacktrace": [
-          "stacktracecards"
-        ],
-        "one-word-story": [
-          "parm-one-word-story"
-        ],
-        "f5": [
-          "f5-0000"
-        ],
-        "parm": [
-          "parm-parm"
-        ],
-        "names-not-numbers": [
-          "parm-0001"
-        ],
-        "storybook/react": [
-          "parm-storybook-react"
-        ],
         "codegumi": [
           "codegumi"
-        ],
-        "hexd": [
-          "bewitchd"
-        ],
-        "ganja": [
-          "ganjaguarantee"
-        ],
-        "cindy": [
-          "cindyliu"
         ],
         "scott": [
           "scottcodes"
         ],
-        "murella": [
-          "murellamuses"
-        ],
-        "node-library": [
-          "nodelibrary"
-        ]
-      }
-    },
-    "682692034763": {
-      "hosting": {
         "parm": [
           "parm-parm"
         ]

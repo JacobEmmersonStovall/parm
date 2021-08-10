@@ -16,7 +16,7 @@ import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
 import { useSortState } from './hooks';
 import Markdown from 'markdown-to-jsx';
-import { AdventureOptionCard } from './AdventureOptionCard';
+import { AdventureOptionCard } from './AdventureOptionCard.parm';
 
 
 const compareByTime = (a: Option, b: Option) => {

@@ -874,16 +874,16 @@
                   "with": "./apps/f5/src/environments/codegumi.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.codegumi.tsx"
-                },
-                {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
                   "with": "apps/f5/src/app/AdventureOptionCard.codegumi.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/EndMessage.tsx",
                   "with": "apps/f5/src/app/EndMessage.codegumi.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.codegumi.tsx"
                 }
               ]
             },
@@ -954,12 +954,12 @@
                   "with": "./apps/f5/src/environments/cindy.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.cindy.tsx"
-                },
-                {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
                   "with": "apps/f5/src/app/AdventureOptionCard.cindy.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/EndMessage.tsx",
+                  "with": "apps/f5/src/app/EndMessage.cindy.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -973,10 +973,6 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/scott.ts"
-                },
-                {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.scott.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
@@ -998,10 +994,6 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/murella.ts"
-                },
-                {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.murella.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
@@ -1133,16 +1125,16 @@
                   "with": "./apps/f5/src/environments/codegumi.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.codegumi.tsx"
-                },
-                {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
                   "with": "apps/f5/src/app/AdventureOptionCard.codegumi.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/EndMessage.tsx",
                   "with": "apps/f5/src/app/EndMessage.codegumi.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.codegumi.tsx"
                 }
               ]
             },
@@ -1213,12 +1205,12 @@
                   "with": "./apps/f5/src/environments/cindy.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.cindy.tsx"
-                },
-                {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
                   "with": "apps/f5/src/app/AdventureOptionCard.cindy.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/EndMessage.tsx",
+                  "with": "apps/f5/src/app/EndMessage.cindy.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -1232,10 +1224,6 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/scott.ts"
-                },
-                {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.scott.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
@@ -1257,10 +1245,6 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/murella.ts"
-                },
-                {
-                  "replace": "apps/f5/src/app/Adventure.tsx",
-                  "with": "apps/f5/src/app/Adventure.murella.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
