@@ -1,2 +1,2 @@
-import Adventure from './Adventure';
+import Adventure from './Adventure.parm';
 export default Adventure;

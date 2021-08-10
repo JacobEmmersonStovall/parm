@@ -1016,6 +1016,27 @@
                   "with": "apps/f5/src/app/Main.murella.tsx"
                 }
               ]
+            },
+            "node-library": {
+              "outputPath": "dist/apps/node-library",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/node-library.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.node-library.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/EndMessage.tsx",
+                  "with": "apps/f5/src/app/EndMessage.node-library.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.node-library.tsx"
+                }
+              ]
             }
           }
         },
@@ -1254,6 +1275,27 @@
                   "with": "apps/f5/src/app/Main.murella.tsx"
                 }
               ]
+            },
+            "node-library": {
+              "outputPath": "dist/apps/node-library",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/node-library.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.node-library.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/EndMessage.tsx",
+                  "with": "apps/f5/src/app/EndMessage.node-library.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.node-library.tsx"
+                }
+              ]
             }
           }
         },
@@ -1302,6 +1344,9 @@
             },
             "murella": {
               "buildTarget": "f5:build:murella"
+            },
+            "node-library": {
+              "buildTarget": "f5:build:node-library"
             }
           }
         },

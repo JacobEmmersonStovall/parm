@@ -14,7 +14,6 @@ import { IImportOptions } from 'firestore-export-import/dist/helper';
 
   const options: IImportOptions = {
     autoParseDates: true,
-    refs: []
   };
 
   // Start importing your data

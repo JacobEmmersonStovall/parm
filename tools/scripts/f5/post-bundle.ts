@@ -12,26 +12,56 @@ nunjucks.configure({
   autoescape: false,
 });
 
-
-const writeStorage = async ({
+const downloadFile = async ({
   writePath,
   storagePath,
   bucket,
-  appName
+  appName,
+  localAppDir,
 }) => {
-  // write favicon.ico
+  // write file
   const options = {
     destination: resolve(`${writePath}/${storagePath}`),
   };
 
   // await firebase
   // (writes to file specified by 'options')
-  await firebase()
+  const fileRef = await firebase()
     .storage()
     .bucket(bucket)
-    .file(`${appName}/${storagePath}`)
-    .download(options)
+    .file(`${localAppDir}/${storagePath}`)
     ;
+  if (fileRef.exists()) {
+    await fileRef.download(options);
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const writeStorage = async ({
+  /** local path to write to */
+  writePath,
+  /** remote path */
+  storagePath,
+  /** bucket name, in form `${project-id-from-secrets-json}.appspot.com*/
+  bucket,
+  /** app name as specified by environment, 
+   * aka `apps/f5/src/environments/${app-name}.ts*/
+  appName
+}) => {
+  const success = downloadFile({
+    writePath, storagePath, bucket,
+    appName, localAppDir: appName
+  });
+  if (success) {
+    return true;
+  }
+  const downloadDefaultSuccess = downloadFile({
+    writePath, storagePath, bucket, 
+    appName: 'default', localAppDir: appName
+  });
+  return downloadDefaultSuccess;
 }
 
 export const postBundle = async (appNames = []) => {
@@ -56,24 +86,28 @@ export const postBundle = async (appNames = []) => {
       const bucket = `parm-app.appspot.com`;
       const faviconUrl = `favicon.ico`;
       
+      /** write for deployment */
       await writeStorage({
         writePath: dist,
         storagePath: 'favicon.ico',
         bucket,
         appName: app.app,
       });
+      /** write for local dev */
       await writeStorage({
         writePath: src,
         storagePath: 'favicon.ico',
         bucket,
         appName: app.app,
       });
+      /** write for deployment */
       await writeStorage({
         writePath: dist,
         storagePath: `meta.image.png`,
         bucket,
         appName: app.app,
       });
+      /** write for local dev */
       await writeStorage({
         writePath: src,
         storagePath: 'meta.image.png',
