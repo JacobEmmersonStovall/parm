@@ -18,6 +18,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShareIcon from '@material-ui/icons/Share'; 
 import MoreVertIcon from '@material-ui/icons/MoreVert'; 
 import ImageIcon from '@material-ui/icons/Image';
+import FileCopy from '@material-ui/icons/FileCopy';
 import { useHistory, Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useQueryParams, StringParam } from 'use-query-params';
@@ -59,6 +60,17 @@ export const AdventureOptionCard = (row: any) => {
       setText(row.text);
       setEditing(true);
     }
+  }
+  const handleCopy = () => {
+    /** generate dummy textarea */
+    const copyText = document.createElement('textarea');
+    copyText.value = row.text
+    document.querySelector('body').append(copyText);
+    /* Select the text */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    document.execCommand('copy');
+    copyText.remove();
   }
   const handleChange = (event) => {
     setText(event.target.value);
@@ -150,6 +162,14 @@ export const AdventureOptionCard = (row: any) => {
                             <ShareIcon />
                           </IconButton>
                         </Grid> */}
+                  <Grid item>
+                    <IconButton
+                      aria-label="copy node source"
+                      onClick={handleCopy}
+                    >
+                      <FileCopy/>
+                    </IconButton>
+                  </Grid>
                   <Grid item>
                     <IconButton
                       aria-label={liked ? 'unlike' : 'like'}
