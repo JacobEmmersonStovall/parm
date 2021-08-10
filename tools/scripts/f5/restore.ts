@@ -7,6 +7,7 @@ const firestoreService = require('firestore-export-import');
 const serviceAccount = require('../../../env/com-f5-parm-firebase.json');
  
 // Initiate Firebase App
+// param: `https://{project-id-from-service-account.json}.firebase.io.com``
 firestoreService.initializeApp(serviceAccount, 'https://com-f5-parm.firebaseio.com');
 
 const options = {
