@@ -973,6 +973,22 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/scott.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Adventure.tsx",
+                  "with": "apps/f5/src/app/Adventure.scott.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.scott.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/EndMessage.tsx",
+                  "with": "apps/f5/src/app/EndMessage.scott.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.scott.tsx"
                 }
               ]
             },
@@ -1195,6 +1211,22 @@
                 {
                   "replace": "apps/f5/src/environments/environment.ts",
                   "with": "./apps/f5/src/environments/scott.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Adventure.tsx",
+                  "with": "apps/f5/src/app/Adventure.scott.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.scott.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/EndMessage.tsx",
+                  "with": "apps/f5/src/app/EndMessage.scott.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.scott.tsx"
                 }
               ]
             },

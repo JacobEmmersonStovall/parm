@@ -194,6 +194,21 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "murella",
+      "public": "dist/apps/murella",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }

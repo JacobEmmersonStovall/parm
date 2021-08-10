@@ -16,7 +16,7 @@ export const OAuth20 = () => {
   });
   const redditAppName = reddit.clientId;
   const baseUrl = 'https://www.reddit.com/api/v1/authorize?';
-  const redirectUri = 'https://parm.app/?focus=H0ua4f7Ue8Mv2zjxtO4S';
+  const redirectUri = 'https://parm.app/?focus=authorize-reddit';
   const parts = [
     `client_id=${redditAppName}`,
     `response_type=code`,
