@@ -179,6 +179,21 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "scott",
+      "public": "dist/apps/scott",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }

@@ -54,3 +54,9 @@ npm-debug.*
 *.orig.*
 web-build/
 apps/f5/expo/node_modules
+
+
+firebase-debug.log
+
+apps/f5/src/favicon.ico
+apps/f5/src/meta.image.png
