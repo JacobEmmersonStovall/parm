@@ -45,17 +45,35 @@ export const preBundle = async (appNames = []) => {
       const fp = `./apps/f5/src/environments/${app.app}.ts`;
       writeEnv({ fp, data: app });
 
+      const replacements = [];
+
+      if (app.archetype) {
+        // dynamically replace any files
+        // that include the specified archetype
+        // for the app as a suffix, eg ./file._blog.ts
+        // will overwrite the default ./file.ts
+        const archSuffix = `._${app.archetype}.ts`;
+        replacements.push(...files
+          .filter(f => f.includes(archSuffix))
+          .map(f => ({
+            replace: f.replace(archSuffix, '.ts'),
+            with: f,
+          })));
+        console.log({ replacements });
+      };
+
       // dynamically replace any files
       // that include the name of the app
       // as a suffix, eg ./file.parm.ts
       // will overwrite the default ./file.ts
       const suffix = `.${app.app}.ts`;
-      const replacements = files
+      replacements.push(...files
         .filter(f => f.includes(suffix))
         .map(f => ({
           replace: f.replace(suffix, '.ts'),
-          with: f, 
-        }));
+          with: f,
+        })));
+
 
       const configuration = {
         "outputPath": `dist/apps/${app.app}`,

@@ -10,3 +10,7 @@ src/index.local.html
 # is written to disk during 
 # post-bundle step.
 src/favicon.ico
+src/meta.image.png
+
+# generated files
+artifacts/*

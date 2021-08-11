@@ -15,14 +15,12 @@ import LinkIcon from '@material-ui/icons/Link';
 import EditIcon from '@material-ui/icons/Edit'; 
 import FavoriteIcon from '@material-ui/icons/Favorite'; 
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'; 
-import ShareIcon from '@material-ui/icons/Share'; 
-import MoreVertIcon from '@material-ui/icons/MoreVert'; 
-import ImageIcon from '@material-ui/icons/Image';
-import FileCopy from '@material-ui/icons/FileCopy';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import DescriptionIcon from '@material-ui/icons/Description';
+import CodeIcon from '@material-ui/icons/Code';
 import { useHistory, Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import { useQueryParams, StringParam } from 'use-query-params';
-import { useMeta, useNodeView, useRoles } from './firebase';
+import { useMeta, useRoles } from './firebase';
 import { storage } from './storage';
 import { validate } from './validate';
 import { Markdown } from './Markdown';
@@ -34,7 +32,6 @@ export const AdventureOptionCard = (row: any) => {
   const isAdmin = roles.includes('admin');
   const canEdit = isAuthor || isAdmin;
   const history = useHistory();
-  const { views } = useNodeView(row.id);
   const { meta, setMeta } = useMeta(row.id);
   const [{ from, to }] = useQueryParams({
     from: StringParam,
@@ -44,7 +41,11 @@ export const AdventureOptionCard = (row: any) => {
   const loading = row == null ? <LoadingSpinner /> : false;
   const canSelect = !row.root && !row.prev;
   const [isEditing, setEditing] = useState(row.new || false);
+  const [isViewingSource, setIsViewingSource] = useState(false);
   const [text, setText] = useState('');
+  const handleToggleViewSource = () => {
+    setIsViewingSource(!isViewingSource);
+  }
   const handleToggleEdit = () => {
     if (isEditing) {
       if (validate(text) === true) {
@@ -117,10 +118,33 @@ export const AdventureOptionCard = (row: any) => {
               component="div"
             >
               What now?
-                  </Typography>
+            </Typography>
           </CardContent>
         )
-
+          || isViewingSource && (
+            <>
+              <CardContent>
+                <TextField
+                  style={{ width: '100%' }}
+                  label={'Source text'}
+                  multiline
+                  value={row.text || ''}
+                />
+              </CardContent>
+              <CardActions disableSpacing>
+                <Grid container direction="row-reverse">
+                  <Grid item>
+                    <IconButton 
+                      aria-label="view node"
+                      onClick={handleToggleViewSource}
+                    >
+                      <DescriptionIcon />
+                    </IconButton>
+                  </Grid>
+                </Grid>
+              </CardActions>
+            </>
+          )
           || isEditing && (
             <>
               <CardContent>
@@ -144,7 +168,10 @@ export const AdventureOptionCard = (row: any) => {
               <CardActions disableSpacing>
                 <Grid container direction="row-reverse">
                   <Grid item>
-                    <IconButton onClick={handleToggleEdit}>
+                    <IconButton 
+                      aria-label="cancel edit"
+                      onClick={handleToggleEdit}
+                    >
                       <AddIcon />
                     </IconButton>
                   </Grid>
@@ -164,10 +191,18 @@ export const AdventureOptionCard = (row: any) => {
                         </Grid> */}
                   <Grid item>
                     <IconButton
+                      aria-label="view node source"
+                      onClick={handleToggleViewSource}
+                    >
+                      <CodeIcon/>
+                    </IconButton>
+                  </Grid>
+                  <Grid item>
+                    <IconButton
                       aria-label="copy node source"
                       onClick={handleCopy}
                     >
-                      <FileCopy/>
+                      <AssignmentIcon/>
                     </IconButton>
                   </Grid>
                   <Grid item>
@@ -183,7 +218,9 @@ export const AdventureOptionCard = (row: any) => {
                   </Grid>
                   <Grid item>
                     <Link to={url}>
-                      <IconButton>
+                      <IconButton
+                        aria-label="set focus"
+                      >
                         <LinkIcon />
                       </IconButton>
                     </Link>

@@ -31,7 +31,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { storage } from './storage';
 import uuidv1 from 'uuid/v1';
 import { getImageUrl, log } from './utils';
-import defaultNodes from './defaultNodes';
 import { StringParam, useQueryParams } from 'use-query-params';
 import { useFilter } from '@parm/react/filter-control';
 
@@ -176,17 +175,6 @@ const fetch = async () => {
       .replace(/\\\n/g, '\n')
       .replace(/\\\t/g, '\t')
   })) as any;
-  const existingDefaultNodes = nodes
-    .filter(n => defaultNodes.some(d => d.id === n.id))
-    .map(n => n.id);
-  const promises = defaultNodes
-    .filter(n => !existingDefaultNodes.some(id => id === n.id))
-    .map(n => new Promise(async (res, rej) => {
-      await createNode(n, nodes);
-      nodes.push(n);
-      res(null);
-    }));
-  await Promise.all(promises);
   return {
     nodes: mapNodes(nodes),
     root: nodes.find(n => n.isRoot),

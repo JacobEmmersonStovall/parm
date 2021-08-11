@@ -2,6 +2,9 @@
   "targets": {
     "parm-app": {
       "hosting": {
+        "cindy": [
+          "cindyliu"
+        ],
         "codegumi": [
           "codegumi"
         ],
@@ -10,6 +13,18 @@
         ],
         "parm": [
           "parm-parm"
+        ],
+        "node-library": [
+          "nodelibrary"
+        ],
+        "woj": [
+          "danwoj"
+        ],
+        "murella": [
+          "murellamuses"
+        ],
+        "cano": [
+          "jacobcano"
         ]
       }
     }

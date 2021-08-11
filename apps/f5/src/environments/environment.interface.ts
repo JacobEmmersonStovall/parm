@@ -41,6 +41,12 @@ export interface Environment {
    * to the firebase secrets.
   */
   database?: string;
+  /** 
+   * the 'archetype' for the application.
+   * this causes files with pattern `${filename}._${archetype}.*`
+   * to replace their contemporary file.
+   */
+  archetype?: string;
 }
 
 interface OtherOptions {

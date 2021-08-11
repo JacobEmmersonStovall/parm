@@ -831,6 +831,10 @@
                   "with": "./apps/f5/src/environments/parm.ts"
                 },
                 {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
+                },
+                {
                   "replace": "apps/f5/src/app/Adventure.tsx",
                   "with": "apps/f5/src/app/Adventure.parm.tsx"
                 },
@@ -874,12 +878,8 @@
                   "with": "./apps/f5/src/environments/codegumi.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.codegumi.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.codegumi.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -954,12 +954,8 @@
                   "with": "./apps/f5/src/environments/cindy.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.cindy.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.cindy.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -975,16 +971,8 @@
                   "with": "./apps/f5/src/environments/scott.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.scott.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.scott.tsx"
-                },
-                {
                   "replace": "apps/f5/src/app/Main.tsx",
-                  "with": "apps/f5/src/app/Main.scott.tsx"
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 }
               ]
             },
@@ -996,12 +984,12 @@
                   "with": "./apps/f5/src/environments/murella.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.murella.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.murella.tsx"
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.murella.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -1017,16 +1005,42 @@
                   "with": "./apps/f5/src/environments/node-library.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.node-library.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.node-library.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
                   "with": "apps/f5/src/app/Main.node-library.tsx"
+                }
+              ]
+            },
+            "woj": {
+              "outputPath": "dist/apps/woj",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/woj.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.woj.tsx"
+                }
+              ]
+            },
+            "cano": {
+              "outputPath": "dist/apps/cano",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/cano.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 }
               ]
             }
@@ -1082,6 +1096,10 @@
                   "with": "./apps/f5/src/environments/parm.ts"
                 },
                 {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
+                },
+                {
                   "replace": "apps/f5/src/app/Adventure.tsx",
                   "with": "apps/f5/src/app/Adventure.parm.tsx"
                 },
@@ -1125,12 +1143,8 @@
                   "with": "./apps/f5/src/environments/codegumi.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.codegumi.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.codegumi.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -1205,12 +1219,8 @@
                   "with": "./apps/f5/src/environments/cindy.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.cindy.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.cindy.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -1226,16 +1236,8 @@
                   "with": "./apps/f5/src/environments/scott.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.scott.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.scott.tsx"
-                },
-                {
                   "replace": "apps/f5/src/app/Main.tsx",
-                  "with": "apps/f5/src/app/Main.scott.tsx"
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 }
               ]
             },
@@ -1247,12 +1249,12 @@
                   "with": "./apps/f5/src/environments/murella.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.murella.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.murella.tsx"
+                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
+                  "with": "apps/f5/src/app/AdventureOptionCard.murella.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
@@ -1268,16 +1270,42 @@
                   "with": "./apps/f5/src/environments/node-library.ts"
                 },
                 {
-                  "replace": "apps/f5/src/app/AdventureOptionCard.tsx",
-                  "with": "apps/f5/src/app/AdventureOptionCard.node-library.tsx"
-                },
-                {
-                  "replace": "apps/f5/src/app/EndMessage.tsx",
-                  "with": "apps/f5/src/app/EndMessage.node-library.tsx"
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 },
                 {
                   "replace": "apps/f5/src/app/Main.tsx",
                   "with": "apps/f5/src/app/Main.node-library.tsx"
+                }
+              ]
+            },
+            "woj": {
+              "outputPath": "dist/apps/woj",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/woj.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main.woj.tsx"
+                }
+              ]
+            },
+            "cano": {
+              "outputPath": "dist/apps/cano",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/cano.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
                 }
               ]
             }
@@ -1331,6 +1359,12 @@
             },
             "node-library": {
               "buildTarget": "f5:build:node-library"
+            },
+            "woj": {
+              "buildTarget": "f5:build:woj"
+            },
+            "cano": {
+              "buildTarget": "f5:build:cano"
             }
           }
         },

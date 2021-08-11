@@ -7,4 +7,5 @@ export interface App {
   numResponses: number,
   maxResponses: number,
   host: string,
+  archetype?: string,
 }

@@ -134,7 +134,7 @@
     },
     "navigation": {
       "id": "navigation",
-      "text": "\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"Create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n",
+      "text": "\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"about\"\n  href=\"/?focus=about\"\n>\n  About\n</ListItem>\n",
       "type": "action",
       "creatorId": "admin",
       "createTime": {
