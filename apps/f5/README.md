@@ -36,7 +36,15 @@ F5 is a massive multiplayer online text adventure.
 The multiplayer component is that if you reach the end of the "adventure" by following a certain path you have to wait for someone else to add the next part of the story, but currently that's not enforced. Once someone replies, the adventure continues.
 
 ### Play it
-https://parm.app/
+https://parm.app/ 
+
+``` 
+// as of 2021, this link is for the blog. try using:
+```
+https://fuckfuckfuckfuckfuck.app
+``` 
+// end edit
+``` 
 
 ### Development
 Fetch code and start dev server.
