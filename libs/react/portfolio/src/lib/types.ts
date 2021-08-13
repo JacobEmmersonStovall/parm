@@ -1,7 +1,12 @@
 /** the moral code of a personnel */
 type Code = 'white' | 'black' | 'grey';
+/** analagous to a pokemon type */
 type Class = 'tech' | 'business' | 'legal';
-type SkillClass = Class | 'transferable';
+/** 
+ * 'transferable' skill points an be used to
+ * boost any card Class 
+ * */
+type SkillPointClass = Class | 'transferable';
 /** a liaility's target entity type */
 type Risk = 'personnel' | 'team' | 'field';
 /** states that can affect personnel. think pokémon */
@@ -13,7 +18,7 @@ type AssetType = 'stock' | 'cash-on-hand' | 'bond' | 'tangible';
 type Card = 
   | Personnel
   | Liability
-  | SkillClass
+  | SkillPoint
   | Asset
 ;
 
@@ -55,7 +60,7 @@ interface Personnel {
 }
         
 interface SkillPoint {
-  class: SkillClass,
+  class: SkillPointClass,
   type: 'skill-point',
 }
 
@@ -66,7 +71,7 @@ interface SkillPoint {
  */
 interface Asset {
   type: 'asset',
-  class: SkillClass,
+  class: SkillPointClass,
   assetType: AssetType,
 }
 
