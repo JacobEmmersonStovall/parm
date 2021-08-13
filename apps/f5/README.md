@@ -177,6 +177,26 @@ See `./tools/scripts/f5/backup.ts` for a method to download all firestore data.
 * music sharing app 0️⃣
 * animate button slider 0️⃣
 * animate new option loading 0️⃣
+--
+* options: define node options on per node basis. e.g. "displayAuthor"
+* shorthands 
+    * #post-id - notifies author their post was mentioned, anchor links to the node
+    * @user - tags a user 
+    * **filter-name - "dereferences" a filter pointer and "applied the filter"
+* text, type, data, meta and options editors 
+* advanced edit which allows you to define the entire node in YAML
+* text, type, data etc are pulled from the YAML
+* breadcrumbs are just nodes chained in sequence 
+* add a "vscode text preview scroller" to sidebar 
+    * potentially re use as a breadcrumb selector 
+    * can label each node 1, 2.. 3
+    * can add a numberic node selection editor,
+    * can add skip to top/bottom
+    * can reuse as a node pagination 
+* animate transitions between bread crumb nodes
+* next / prev navigate between nodes
+* adjust website theme (admin)
+* website live `settings.json`
 
 ### Completed Roadmap
 The newest features are at the top of this list.
