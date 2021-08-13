@@ -94,7 +94,7 @@ interface Asset {
  * some liabilities are positive, but become a liability
  * for the opposite code. for instance, a tech scholarship
  * is a white liability code that black codes do not benefit from,
- * but white and grey codes do. this means it is a liability for
+ * but white and grey codes do. this means it is, in effect, a liability for
  * black codes, but represented in game form as a white coded card.
  */
 type Liability = 
