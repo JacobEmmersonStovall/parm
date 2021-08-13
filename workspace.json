@@ -1043,6 +1043,19 @@
                   "with": "apps/f5/src/app/Main._blog.tsx"
                 }
               ]
+            },
+            "mamatoya": {
+              "outputPath": "dist/apps/mamatoya",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/mamatoya.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
+                }
+              ]
             }
           }
         },
@@ -1308,6 +1321,19 @@
                   "with": "apps/f5/src/app/Main._blog.tsx"
                 }
               ]
+            },
+            "mamatoya": {
+              "outputPath": "dist/apps/mamatoya",
+              "fileReplacements": [
+                {
+                  "replace": "apps/f5/src/environments/environment.ts",
+                  "with": "./apps/f5/src/environments/mamatoya.ts"
+                },
+                {
+                  "replace": "apps/f5/src/app/Main.tsx",
+                  "with": "apps/f5/src/app/Main._blog.tsx"
+                }
+              ]
             }
           }
         },
@@ -1365,6 +1391,9 @@
             },
             "cano": {
               "buildTarget": "f5:build:cano"
+            },
+            "mamatoya": {
+              "buildTarget": "f5:build:mamatoya"
             }
           }
         },

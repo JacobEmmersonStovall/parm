@@ -27,7 +27,6 @@ const main = async () => {
   }
 
   const serviceAccount = require('../../../env/parm-names-not-numbers.json');
-  const nodeLibrary = require('../../../apps/f5/artifacts/node-library.json');
 
   // Initiate Firebase App
   // param: `https://{project-id-from-service-account.json}.firebase.io.com``
@@ -39,6 +38,7 @@ const main = async () => {
 
   appNamesArr.forEach(appName => {
     const f5 = resolve(`./apps/f5/`);
+    const nodeLibrary = require(f5 + '/templates/initial-nodes.json');
     const nodeLibPath = resolve(f5 + `/artifacts/${appName}.library.json`);
     const file = nunjucks.render(f5 + '/templates/initial-nodes.json.njk', {
       app: appName,

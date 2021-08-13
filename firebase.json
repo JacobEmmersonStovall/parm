@@ -254,6 +254,21 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "mamatoya",
+      "public": "dist/apps/mamatoya",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }

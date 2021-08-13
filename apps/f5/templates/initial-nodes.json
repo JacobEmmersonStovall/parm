@@ -1,17 +1,16 @@
 {
   "node-library": {
-    "navigation": {
-      "id": "navigation",
-      "text": "\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"about\"\n  href=\"/?focus=about\"\n>\n  About\n</ListItem>\n",
-      "type": "action",
+    "useful-nodes": {
       "creatorId": "admin",
+      "text": "### Useful Nodes\nI've furnished some interesting default nodes that may be of interest to you. They are as follows:\n\n* [about](/?focus=about)\n* [sample-node](/?focus=sample-node)\n* [user-id](/?focus=user-id)\n* [image-uploader](/?focus=image-uploader)\n* [create-alias](/?focus=create-alias): allows you to create an \"alias\" to an existing node such that you will have a \"pretty url\" for your existing node. Essentially, it creates a new node that acts as a 308.\n* [navigation](/?focus=navigation): this node is a special case. the actual side bar navigation menu is powered by this node. edit the navigation node, and you edit navigation.\n\nIf you're interested in what other nodes you may want to use in your application, browse the [node-library](https://nodelibrary.web.app).\n\nIf you find a node you would like to use, find the toolbar in the top-right corner of the node. Then, either click the \"clipboard\" icon to copy the node source to your clipboard or the \"view source\" icon to view the source text, select it, and copy it. Now, return your web-app and paste the contents of your clipboard into a new node.\n\nSuccess! You pulled existing code from the node library! ❤️",
+      "type": "action",
       "createTime": {
-        "_seconds": 0,
+        "_seconds": 1628862850,
         "_nanoseconds": 0
       },
-      "parent": null,
+      "parent": "navigation",
       "children": [],
-      "isRoot": true,
+      "isRoot": false,
       "subCollection": {}
     },
     "about": {
@@ -22,7 +21,7 @@
       "type": "action",
       "text": "Hello there!\n\nThis site is powered by the same source code that powers [parm.app](https://parm.app/). Everything in this box is inside a \"node\". You can enter whatever you want in this node, including `markdown`, React components, and more.\n\nThe website is even partially built via these nodes. For instance, the navigation menu in the sidebar is handled via a special named node called `navigation`. Here is the source text for that node:\n\n```\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"Create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n```\n\nThere's lots of different custom React components that are allowlisted for use in a node. For example, `<DateSubtracter/>` is one that is easy to use because it does not require any props. However, some custom React components do require props. To learn what components are available (and how to use them) I recommend checking out the source code of the Markdown component [here](https://github.com/prmichaelsen/parm/blob/master/apps/f5/src/app/Markdown.tsx).\n\nBy the way, you can even see the `DateSubstracter` in action right here!\n\n---\n\n\n<DateSubtracter/>\n\n<br/>\n\n<br/>\n\n---\n\nI made this component to keep track of how long we'd been in quarantine during coronavirus.\n\nThere's lots of fancy tricks packed into this app (and complimentarily, lots of bugs). Try the dark mode!\n\nTo create a new node, just enter some text into that \"Improvise\" box and click the `+` icon.\n\nWell, that's it! Hope you liked the tour and are interested in building something neat.\n\nCheers,\n\nPatrick",
       "createTime": {
-        "_seconds": 100,
+        "_seconds": 1628862900,
         "_nanoseconds": 0
       },
       "subCollection": {}
@@ -32,7 +31,7 @@
       "isRoot": false,
       "type": "action",
       "createTime": {
-        "_seconds": 90,
+        "_seconds": 1628862690,
         "_nanoseconds": 0
       },
       "parent": "navigation",
@@ -45,7 +44,7 @@
       "parent": "navigation",
       "type": "action",
       "createTime": {
-        "_seconds": 50,
+        "_seconds": 1628862650,
         "_nanoseconds": 0
       },
       "isRoot": false,
@@ -61,15 +60,15 @@
       "creatorId": "admin",
       "type": "action",
       "createTime": {
-        "_seconds": 40,
-        "_nanoseconds": 40
+        "_seconds": 1628862640,
+        "_nanoseconds": 0
       },
       "subCollection": {}
     },
     "create-alias": {
       "creatorId": "admin",
       "createTime": {
-        "_seconds": 30,
+        "_seconds": 1628862630,
         "_nanoseconds": 0
       },
       "parent": "navigation",
@@ -77,6 +76,20 @@
       "type": "action",
       "isRoot": false,
       "text": "### Alias\nCreate an alias to a node so you can easily direct link to it, e.g. `parm.app?focus=google-me`.\n\n<Alias/>",
+      "subCollection": {}
+    },
+    "navigation": {
+      "id": "navigation",
+      "text": "\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"about\"\n  href=\"/?focus=about\"\n>\n  About\n</ListItem>\n",
+      "type": "action",
+      "creatorId": "admin",
+      "createTime": {
+        "_seconds": 1628862000,
+        "_nanoseconds": 0
+      },
+      "parent": null,
+      "children": [],
+      "isRoot": true,
       "subCollection": {}
     }
   }
