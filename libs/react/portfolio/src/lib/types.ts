@@ -3,7 +3,7 @@ type Code = 'white' | 'black' | 'grey';
 /** analagous to a pokemon type */
 type Class = 'tech' | 'business' | 'legal';
 /** 
- * 'transferable' skill points an be used to
+ * 'transferable' skill points can be used to
  * boost any card Class 
  * */
 type SkillPointClass = Class | 'transferable';
