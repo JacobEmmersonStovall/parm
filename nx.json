@@ -122,6 +122,9 @@
     },
     "react-file-upload": {
       "tags": []
+    },
+    "react-portfolio": {
+      "tags": []
     }
   }
 }
