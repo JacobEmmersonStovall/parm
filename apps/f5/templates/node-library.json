@@ -1,137 +1,5 @@
 {
   "node-library": {
-    "1yxKFRen6GRBvVKBz0zw": {
-      "createTime": {
-        "_seconds": 1628605125,
-        "_nanoseconds": 574000000
-      },
-      "updateTime": {
-        "_seconds": 1628605161,
-        "_nanoseconds": 495000000
-      },
-      "isRoot": false,
-      "creatorId": "admin",
-      "children": [],
-      "parent": "navigation",
-      "type": "action",
-      "text": "### Reddit Image Poster\n\n<ReactRedditPoster/>",
-      "subCollection": {}
-    },
-    "2itEU8UwGWaRtfBVhna7": {
-      "children": [],
-      "creatorId": "admin",
-      "type": "action",
-      "text": "hi",
-      "createTime": {
-        "_seconds": 1628575029,
-        "_nanoseconds": 386000000
-      },
-      "parent": "navigation",
-      "updateTime": {
-        "_seconds": 1628575040,
-        "_nanoseconds": 337000000
-      },
-      "isRoot": false,
-      "subCollection": {}
-    },
-    "AKmMdBQVXeUa6ZTrsXDm": {
-      "parent": "navigation",
-      "type": "action",
-      "text": "Your user id is:\n\n<UserId/>",
-      "children": [],
-      "isRoot": false,
-      "creatorId": "admin",
-      "createTime": {
-        "_seconds": 1628605031,
-        "_nanoseconds": 783000000
-      },
-      "subCollection": {}
-    },
-    "F1YCvtaQ3bFTeCqze7DW": {
-      "parent": "navigation",
-      "createTime": {
-        "_seconds": 1628605012,
-        "_nanoseconds": 512000000
-      },
-      "children": [],
-      "text": "<YoutubeEmbed embedId=\"O3UenuM-SYY\"/>",
-      "isRoot": false,
-      "creatorId": "admin",
-      "type": "action",
-      "subCollection": {}
-    },
-    "IY02oUWGcXLKMrTPo8t5": {
-      "createTime": {
-        "_seconds": 1628604895,
-        "_nanoseconds": 963000000
-      },
-      "creatorId": "admin",
-      "type": "action",
-      "parent": "navigation",
-      "isRoot": false,
-      "text": "# Stuff you should probably know before going for a code interview\n\nThis is a quick and dirty list of all the stuff you _should_ know before you walk into an interview for a big name tech company. This will not cover any _software_ topics, only _computer science_ topics. This will help you in the coding portion of interviews, _not_ in design portions.\n\n> ℹ️ - Use the language you are most familiar with for any of this content. Don't use a language you don't use everyday, or it will show. _\"...how do you truncate an array again?\"_ Remember that a lot of interviewers expect you to code on a whiteboard. There will be no autocomplete or google to help you if you forget the name of a function. At the very least, you should have written code to do these things _at least once_. Ideally, you could do each without a reference. \n\n## you should know: \n### what a hashtable is, and: \n* why you would use one over an array\n* how they are implemented at a super high-level\n\n> ℹ️ - hashtables are basically the answer to _every_ code question, so you better know this. It should be your first  thought when you start a question. _\"I wonder if I could use a hashtable for this?\"_ If not, good, no harm done. But if the problem _could have been solved with a hashtable_, and you _didn't think of that_, the interviewer will notice.\n\n### all the basic sort algorithms - because they are considered trivial\n#### you must be able to implement \n* insertion sort\n* selection sort\n* merge sort \n* quick sort\n* quick select\n\n#### you might want to know\nFor quick sort and merge sort: \n\n* how do they compare?\n* what is each's space-time complexity?\n* is either in-place?\n\nYou might also want to know how to implement:\n\n* bubble sort\n* gnome sort\n* sleep sort (kidding, but read about it if you're interested)\n\n### you must know all the basic graph traversal algorithms - because they are useful \n* breadth first search \n* depth first search  \n  * pre-order  \n  * in-order    \n  * post-order\n* bellman-ford\n* djisktra\n* binary search tree - or at the very least, how it applies to searching\n* how to solve the single source shortest path problem\n\n\\* consider studying the linked list section before attempting this section if you have extra time.\n\n### recursion\nRecursion is useful, and you might surprise your interviewer if you get stuck on a recursion problem.\n\n### priority queue\nThe priority queue is an awesome data structure. At the very least, know this exists. It depends on a data structure called a heap, but if you don't want to learn that, then just assume that it's some black magic that is yours to abuse to your heart's content.\n\n### time complexity\nFor all of the above, you should be able to reason about time complexity.\n\n> ℹ️ - The rest I would not consider \"need to know\", because they are usually implemented for you. But basic linear/logn searches and graph traversal are a must. If not simply because they're like the abcs of computing, and you don't want to look illiterate.\n\n## what you _might_ want to know\n### heaps\nwhat is a heap and why is it useful?\n\nhow do you:\n\n* add an element\n* extract an element\n\nyou should practice implementing these functions that heaps depend on:\n\n* parent\n* left child\n* right child\n* shift down\n* shift up\n\n## bsts\nIdeally you've implemented a binary search tree at least once. Even better if you've implemented balanced ones. At any rate, it might help to know what:\n\n* a complete tree is\n* a balanced tree is\n* a full tree is\n\nRead about the bst, and maybe be able to speak to some degree about how you can define its height, number of levels, or number of nodes in terms of powers of two or logs of two. Are these properties useful at all? How?\n\nWhat data structure does a bst with only left children and no right children look like?\n\n# extraneous 200 level concepts\nIf you went to uni, then these concepts are generally considered in the 200 level in the states. So, you should probably know them if you went to uni for computer science.\n\n### generics, or parameterized types \n> ℹ️ - This is first on this list for a reason. You will definitely surprise your interviewer if you don't how to use generics. The caveat is that if you mostly work in a language like python or javascript, you would have never encountered this concept. But if you say you know Java and you can't use generics then this will raise alarms to your interviewer.\n\nyou should understand:\n\n* what generics are\n* why they are useful or how they allow us to re-use code\n\n#### here's a quick overview\n```java\n// creating an array of ints without generics\nint[] myArray = new int[] {};\n// creating lists for ints and strings, respectively\nIntList myIntList = new IntList();\nStringList myStringList = new StringList();\n// creating a list for each using generics\nList<int> myGenericIntList = new ArrayList<int>();\nList<string> myGenericStringList = new ArrayList<string>();\n```\nSomeone wrote this `List` class without knowing what type of data you were going to put into it. That's because it doesn't matter. The operations for adding an `int` to a list are the exact same as they are for adding a `string` to a list. That means they can defer assigning types to its contents until the exact moment you need to use it. Instead of writing one class for each data type we want to contain, we only need _one generic class_. This becomes insanely powerful as the number of types you want to parameterize increases.\n\nFor instance, consider Java's `Dictionary<TKey, TValue>` class, which means you now have the square of the number of types in Java combinations that you don't have to write classes for. You can just use the one generic class, instead.\n\n## pointers & references\nWhat are pointers and references? You should read about them and obtain a rudimentary understanding. They are very important, but usually you don't notice they exist unless you're programming at a very low-level language. \n\n> ℹ️ - In the context of programming languages, low-level means you're closer to writing 1's and 0's, whereas high-level means you're closer to writing English.\n\n## linked lists\nfor what it's worth, if you're new to this, linked lists _are hard_. They seem super simple when you draw pictures of them, until you're doing stuff like:\n\n```typescript\nlet prev = null;\nlet reverse = null;\nlet it = head;\nwhile (it !== null) {  \n  prev = it;\n  it = it.next;\n  let temp = {\n    val: prev.val,\n    next: reverse,\n  };\n  reverse = temp;\n}\nreturn reverse;\n```\nWhat does this function do? Despite appearing to simply set a bunch of variables to references of themselves in a random order, this function will actually reverse a linked-list. Doesn't seem so simple.\n\nNo interviewer will ever directly ask you a question about a linked list, and you could probably derive any of these during any interview, but if you have extra time to waste learning this, it will be good for you. Maybe even learn this first, because it might help you with the graph stuff.\n\n### you should know how to:\n* implement a linked list\n* iterate over the linked list\n* remove a node\n* insert a node in the front of the list\n* insert a node at the end of the list\n* insert a node arbitrarily\n* insert a node in a sorted list\n* remove duplicates\n* insert a node in a sorted list, disallowing duplicates\n* reverse the list\n* turn it into a doubly-linked list\n\n### you should understand these concepts as linked lists apply to:\n\n* stacks\n* the pop operation\n* the push operation\n* why a linked list would ever be used as opposed to an array? ie, what is the most obvious advantage?\n* time complexities for interacting with a linked list\n\n## graphs\nknow some basic terminology about graphs (if you did the graph traversal section, you should have encountered these) and their implications:\n\n* directed or undirected\n* cyclic or acyclic\n* weighted or unweighted \n* non-negative graphs\n\nknow common ways to represent graphs: \n\n* edge list\n* adjacency list\n* adjacency matrix\n* node objects\n\n# extraneous 300 level conceptshave more time?\nread about:\n\n* closures\n* scopes\n* function call-stack\n* weakly typed vs strongly typed languages\n* implicit typing and type inferencing\n\n# further resources\nI can't recommend enough these resources:\n\n## visualgo\n> [visualgo.net](https://visualgo.net/en)\n\nthis is quite possibly the _best_ resource _ever_ to exist on learning any data structures or algorithms concepts. \n\n## leetcode\n> [leetcode](https://leetcode.com/)\n\nthis is an excellent pool of practice questions. Practice solving these problems on a white board, talking aloud to yourself as you solve them. Ideally, you should be able to solve any easy problem in 15 minutes and any medium/hard problem in 45 minutes. Don't beat yourself up over the med/hard ones though, some of them are _really hard_.\n\nI also recommend subscribing for premium leet code (at the time of writing, $30/mo) for at least one month in order to take the interview track for the specific company you're applying for. This is a lot better than messing around randomly solving leetcode problems hoping that it's useful. Remember, you should not be focusing on learning how to solve any one specific problem on this site. Instead, _focus on honing your problem-solving abilities_.\n\n* What is your process? \n* Do you mentally test your code? (remember, since you are coding on a whiteboard, you can't just guess and check. You need to make your own tests cases and run each test case manually in your head).\n* Do you come up with a solution in plain English before coding? Do you discuss, out loud, all of the different possible approaches for solving this problem? \n* Do you know the time complexities and the implications of the data structures and algorithms you're using?\n\n# parting words\nMy final tips for your interview are this:\n\n* slow down, breath. Are you rambling? Stop and breath.\n* think everything out loud, so the interviewer knows what's going on in your head. They want to help you, but they can't if they don't know what you're thinking.\n* don't be afraid to be quiet and think, either.\n* ask _tons_ of clarifying questions.\n* don't be afraid to discuss brute force solutions.\n\nCheers, and good luck.\n\n- Patrick",
-      "children": [],
-      "subCollection": {}
-    },
-    "NQuuc3VnvGtX3pRJT2qy": {
-      "children": [],
-      "isRoot": false,
-      "type": "action",
-      "createTime": {
-        "_seconds": 1628604968,
-        "_nanoseconds": 989000000
-      },
-      "parent": "navigation",
-      "text": "This is one more test node. Nodes can't be deleted, only edited. Try creating a node and hitting the little pencil icon to the top right.\n\nNodes can only be edited by the person who created them on the machine and browser they used to create them. Keep that in mind! If you are the administrator of this website, it is possible for me to grant you an admin role which allows you to override this restriction.\n\n\\- Pat",
-      "creatorId": "admin",
-      "subCollection": {}
-    },
-    "authorize-reddit": {
-      "isRoot": false,
-      "type": "redirect",
-      "children": [],
-      "createTime": {
-        "_seconds": 1628605278,
-        "_nanoseconds": 378000000
-      },
-      "text": "Redirecting you in a moment...",
-      "parent": null,
-      "creatorId": "admin",
-      "data": {
-        "target": "hhbEobDEX8uvPVIyA4ZP"
-      },
-      "subCollection": {}
-    },
-    "euRHsk9RVc26rxRuKHgk": {
-      "parent": "navigation",
-      "createTime": {
-        "_seconds": 1628605049,
-        "_nanoseconds": 194000000
-      },
-      "creatorId": "admin",
-      "children": [],
-      "text": "### Alias\nCreate an alias to a node so you can easily direct link to it, e.g. `parm.app?focus=google-me`.\n\n<Alias/>",
-      "isRoot": false,
-      "type": "action",
-      "subCollection": {}
-    },
-    "hhbEobDEX8uvPVIyA4ZP": {
-      "type": "action",
-      "isRoot": false,
-      "updateTime": {
-        "_seconds": 1628605160,
-        "_nanoseconds": 936000000
-      },
-      "creatorId": "admin",
-      "children": [],
-      "createTime": {
-        "_seconds": 1628605135,
-        "_nanoseconds": 732000000
-      },
-      "text": "In order to use Reddit features on this site, you must first authorize the parm application with your Reddit account.\n\n<OAuth20/>",
-      "parent": "navigation",
-      "subCollection": {}
-    },
     "navigation": {
       "id": "navigation",
       "text": "\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"about\"\n  href=\"/?focus=about\"\n>\n  About\n</ListItem>\n",
@@ -142,22 +10,11 @@
         "_nanoseconds": 258000000
       },
       "parent": null,
-      "children": [
-        "2itEU8UwGWaRtfBVhna7",
-        "IY02oUWGcXLKMrTPo8t5",
-        "p9v9naN40kTGnuKDXMUt",
-        "NQuuc3VnvGtX3pRJT2qy",
-        "sioYjfDHXdDGTZAe17b2",
-        "F1YCvtaQ3bFTeCqze7DW",
-        "AKmMdBQVXeUa6ZTrsXDm",
-        "euRHsk9RVc26rxRuKHgk",
-        "1yxKFRen6GRBvVKBz0zw",
-        "hhbEobDEX8uvPVIyA4ZP"
-      ],
+      "children": [],
       "isRoot": true,
       "subCollection": {}
     },
-    "p9v9naN40kTGnuKDXMUt": {
+    "about": {
       "creatorId": "admin",
       "parent": "navigation",
       "isRoot": false,
@@ -170,7 +27,20 @@
       },
       "subCollection": {}
     },
-    "sioYjfDHXdDGTZAe17b2": {
+    "sample-node": {
+      "children": [],
+      "isRoot": false,
+      "type": "action",
+      "createTime": {
+        "_seconds": 1628604968,
+        "_nanoseconds": 989000000
+      },
+      "parent": "navigation",
+      "text": "This is one more test node. Nodes can't be deleted, only edited. Try creating a node and hitting the little pencil icon to the top right.\n\nNodes can only be edited by the person who created them on the machine and browser they used to create them. Keep that in mind! If you are the administrator of this website, it is possible for me to grant you an admin role which allows you to override this restriction.\n\n\\- Pat",
+      "creatorId": "admin",
+      "subCollection": {}
+    },
+    "email-register": {
       "text": "<EmailRegister/>",
       "createTime": {
         "_seconds": 1628604979,
@@ -183,37 +53,104 @@
       "creatorId": "admin",
       "subCollection": {}
     },
-    "user-id": {
+    "react-reddit-poster": {
+      "updateTime": {
+        "_seconds": 1628605161,
+        "_nanoseconds": 0
+      },
+      "parent": "navigation",
       "creatorId": "admin",
-      "type": "redirect",
-      "parent": null,
-      "text": "Redirecting you in a moment...",
+      "children": [],
+      "type": "action",
+      "isRoot": false,
       "createTime": {
-        "_seconds": 1628605058,
-        "_nanoseconds": 371000000
+        "_seconds": 1628605125,
+        "_nanoseconds": 0
+      },
+      "text": "### Reddit Image Poster\n\n<ReactRedditPoster/>",
+      "subCollection": {}
+    },
+    "user-id": {
+      "text": "Your user id is:\n\n<UserId/>",
+      "parent": "navigation",
+      "type": "action",
+      "createTime": {
+        "_seconds": 1628605031,
+        "_nanoseconds": 0
       },
       "isRoot": false,
       "children": [],
-      "data": {
-        "target": "AKmMdBQVXeUa6ZTrsXDm"
+      "creatorId": "admin",
+      "subCollection": {}
+    },
+    "youtube-example": {
+      "creatorId": "admin",
+      "parent": "navigation",
+      "type": "action",
+      "createTime": {
+        "_seconds": 1628605012,
+        "_nanoseconds": 0
+      },
+      "children": [],
+      "isRoot": false,
+      "text": "<YoutubeEmbed embedId=\"O3UenuM-SYY\"/>",
+      "subCollection": {}
+    },
+    "code-blog-example": {
+      "type": "action",
+      "text": "# Stuff you should probably know before going for a code interview\n\nThis is a quick and dirty list of all the stuff you _should_ know before you walk into an interview for a big name tech company. This will not cover any _software_ topics, only _computer science_ topics. This will help you in the coding portion of interviews, _not_ in design portions.\n\n> ℹ️ - Use the language you are most familiar with for any of this content. Don't use a language you don't use everyday, or it will show. _\"...how do you truncate an array again?\"_ Remember that a lot of interviewers expect you to code on a whiteboard. There will be no autocomplete or google to help you if you forget the name of a function. At the very least, you should have written code to do these things _at least once_. Ideally, you could do each without a reference. \n\n## you should know: \n### what a hashtable is, and: \n* why you would use one over an array\n* how they are implemented at a super high-level\n\n> ℹ️ - hashtables are basically the answer to _every_ code question, so you better know this. It should be your first  thought when you start a question. _\"I wonder if I could use a hashtable for this?\"_ If not, good, no harm done. But if the problem _could have been solved with a hashtable_, and you _didn't think of that_, the interviewer will notice.\n\n### all the basic sort algorithms - because they are considered trivial\n#### you must be able to implement \n* insertion sort\n* selection sort\n* merge sort \n* quick sort\n* quick select\n\n#### you might want to know\nFor quick sort and merge sort: \n\n* how do they compare?\n* what is each's space-time complexity?\n* is either in-place?\n\nYou might also want to know how to implement:\n\n* bubble sort\n* gnome sort\n* sleep sort (kidding, but read about it if you're interested)\n\n### you must know all the basic graph traversal algorithms - because they are useful \n* breadth first search \n* depth first search  \n  * pre-order  \n  * in-order    \n  * post-order\n* bellman-ford\n* djisktra\n* binary search tree - or at the very least, how it applies to searching\n* how to solve the single source shortest path problem\n\n\\* consider studying the linked list section before attempting this section if you have extra time.\n\n### recursion\nRecursion is useful, and you might surprise your interviewer if you get stuck on a recursion problem.\n\n### priority queue\nThe priority queue is an awesome data structure. At the very least, know this exists. It depends on a data structure called a heap, but if you don't want to learn that, then just assume that it's some black magic that is yours to abuse to your heart's content.\n\n### time complexity\nFor all of the above, you should be able to reason about time complexity.\n\n> ℹ️ - The rest I would not consider \"need to know\", because they are usually implemented for you. But basic linear/logn searches and graph traversal are a must. If not simply because they're like the abcs of computing, and you don't want to look illiterate.\n\n## what you _might_ want to know\n### heaps\nwhat is a heap and why is it useful?\n\nhow do you:\n\n* add an element\n* extract an element\n\nyou should practice implementing these functions that heaps depend on:\n\n* parent\n* left child\n* right child\n* shift down\n* shift up\n\n## bsts\nIdeally you've implemented a binary search tree at least once. Even better if you've implemented balanced ones. At any rate, it might help to know what:\n\n* a complete tree is\n* a balanced tree is\n* a full tree is\n\nRead about the bst, and maybe be able to speak to some degree about how you can define its height, number of levels, or number of nodes in terms of powers of two or logs of two. Are these properties useful at all? How?\n\nWhat data structure does a bst with only left children and no right children look like?\n\n# extraneous 200 level concepts\nIf you went to uni, then these concepts are generally considered in the 200 level in the states. So, you should probably know them if you went to uni for computer science.\n\n### generics, or parameterized types \n> ℹ️ - This is first on this list for a reason. You will definitely surprise your interviewer if you don't how to use generics. The caveat is that if you mostly work in a language like python or javascript, you would have never encountered this concept. But if you say you know Java and you can't use generics then this will raise alarms to your interviewer.\n\nyou should understand:\n\n* what generics are\n* why they are useful or how they allow us to re-use code\n\n#### here's a quick overview\n```java\n// creating an array of ints without generics\nint[] myArray = new int[] {};\n// creating lists for ints and strings, respectively\nIntList myIntList = new IntList();\nStringList myStringList = new StringList();\n// creating a list for each using generics\nList<int> myGenericIntList = new ArrayList<int>();\nList<string> myGenericStringList = new ArrayList<string>();\n```\nSomeone wrote this `List` class without knowing what type of data you were going to put into it. That's because it doesn't matter. The operations for adding an `int` to a list are the exact same as they are for adding a `string` to a list. That means they can defer assigning types to its contents until the exact moment you need to use it. Instead of writing one class for each data type we want to contain, we only need _one generic class_. This becomes insanely powerful as the number of types you want to parameterize increases.\n\nFor instance, consider Java's `Dictionary<TKey, TValue>` class, which means you now have the square of the number of types in Java combinations that you don't have to write classes for. You can just use the one generic class, instead.\n\n## pointers & references\nWhat are pointers and references? You should read about them and obtain a rudimentary understanding. They are very important, but usually you don't notice they exist unless you're programming at a very low-level language. \n\n> ℹ️ - In the context of programming languages, low-level means you're closer to writing 1's and 0's, whereas high-level means you're closer to writing English.\n\n## linked lists\nfor what it's worth, if you're new to this, linked lists _are hard_. They seem super simple when you draw pictures of them, until you're doing stuff like:\n\n```typescript\nlet prev = null;\nlet reverse = null;\nlet it = head;\nwhile (it !== null) {  \n  prev = it;\n  it = it.next;\n  let temp = {\n    val: prev.val,\n    next: reverse,\n  };\n  reverse = temp;\n}\nreturn reverse;\n```\nWhat does this function do? Despite appearing to simply set a bunch of variables to references of themselves in a random order, this function will actually reverse a linked-list. Doesn't seem so simple.\n\nNo interviewer will ever directly ask you a question about a linked list, and you could probably derive any of these during any interview, but if you have extra time to waste learning this, it will be good for you. Maybe even learn this first, because it might help you with the graph stuff.\n\n### you should know how to:\n* implement a linked list\n* iterate over the linked list\n* remove a node\n* insert a node in the front of the list\n* insert a node at the end of the list\n* insert a node arbitrarily\n* insert a node in a sorted list\n* remove duplicates\n* insert a node in a sorted list, disallowing duplicates\n* reverse the list\n* turn it into a doubly-linked list\n\n### you should understand these concepts as linked lists apply to:\n\n* stacks\n* the pop operation\n* the push operation\n* why a linked list would ever be used as opposed to an array? ie, what is the most obvious advantage?\n* time complexities for interacting with a linked list\n\n## graphs\nknow some basic terminology about graphs (if you did the graph traversal section, you should have encountered these) and their implications:\n\n* directed or undirected\n* cyclic or acyclic\n* weighted or unweighted \n* non-negative graphs\n\nknow common ways to represent graphs: \n\n* edge list\n* adjacency list\n* adjacency matrix\n* node objects\n\n# extraneous 300 level conceptshave more time?\nread about:\n\n* closures\n* scopes\n* function call-stack\n* weakly typed vs strongly typed languages\n* implicit typing and type inferencing\n\n# further resources\nI can't recommend enough these resources:\n\n## visualgo\n> [visualgo.net](https://visualgo.net/en)\n\nthis is quite possibly the _best_ resource _ever_ to exist on learning any data structures or algorithms concepts. \n\n## leetcode\n> [leetcode](https://leetcode.com/)\n\nthis is an excellent pool of practice questions. Practice solving these problems on a white board, talking aloud to yourself as you solve them. Ideally, you should be able to solve any easy problem in 15 minutes and any medium/hard problem in 45 minutes. Don't beat yourself up over the med/hard ones though, some of them are _really hard_.\n\nI also recommend subscribing for premium leet code (at the time of writing, $30/mo) for at least one month in order to take the interview track for the specific company you're applying for. This is a lot better than messing around randomly solving leetcode problems hoping that it's useful. Remember, you should not be focusing on learning how to solve any one specific problem on this site. Instead, _focus on honing your problem-solving abilities_.\n\n* What is your process? \n* Do you mentally test your code? (remember, since you are coding on a whiteboard, you can't just guess and check. You need to make your own tests cases and run each test case manually in your head).\n* Do you come up with a solution in plain English before coding? Do you discuss, out loud, all of the different possible approaches for solving this problem? \n* Do you know the time complexities and the implications of the data structures and algorithms you're using?\n\n# parting words\nMy final tips for your interview are this:\n\n* slow down, breath. Are you rambling? Stop and breath.\n* think everything out loud, so the interviewer knows what's going on in your head. They want to help you, but they can't if they don't know what you're thinking.\n* don't be afraid to be quiet and think, either.\n* ask _tons_ of clarifying questions.\n* don't be afraid to discuss brute force solutions.\n\nCheers, and good luck.\n\n- Patrick",
+      "children": [],
+      "parent": "navigation",
+      "creatorId": "admin",
+      "createTime": {
+        "_seconds": 1628604895,
+        "_nanoseconds": 0
+      },
+      "isRoot": false,
+      "subCollection": {}
+    },
+    "image-uploader": {
+      "text": "### image uploader plus\nuploads images and then provides quick \"click to copy\" shortcut. to include an image in your posts, create a new post with the contents: `![image description](https://the-copied-url)` \n\n<ImgUploaderPlus/>",
+      "isRoot": false,
+      "children": [],
+      "parent": "navigation",
+      "creatorId": "admin",
+      "type": "action",
+      "createTime": {
+        "_seconds": 1628861196,
+        "_nanoseconds": 467000000
       },
       "subCollection": {}
     },
-    "about": {
+    "create-alias": {
       "creatorId": "admin",
-      "type": "redirect",
-      "parent": null,
-      "text": "Redirecting you in a moment...",
       "createTime": {
-        "_seconds": 1628605058,
-        "_nanoseconds": 371000000
+        "_seconds": 1628605049,
+        "_nanoseconds": 0
       },
-      "isRoot": false,
+      "parent": "navigation",
       "children": [],
-      "data": {
-        "target": "p9v9naN40kTGnuKDXMUt"
+      "type": "action",
+      "isRoot": false,
+      "text": "### Alias\nCreate an alias to a node so you can easily direct link to it, e.g. `parm.app?focus=google-me`.\n\n<Alias/>",
+      "subCollection": {}
+    },
+    "reddit-authorize": {
+      "children": [],
+      "text": "In order to use Reddit features on this site, you must first authorize the parm application with your Reddit account.\n\n<OAuth20/>",
+      "createTime": {
+        "_seconds": 1628605135,
+        "_nanoseconds": 0
+      },
+      "type": "action",
+      "parent": "navigation",
+      "creatorId": "admin",
+      "isRoot": false,
+      "updateTime": {
+        "_seconds": 1628605160,
+        "_nanoseconds": 0
       },
       "subCollection": {}
     }
-  }
+  } 
 }

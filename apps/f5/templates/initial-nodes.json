@@ -1,65 +1,16 @@
 {
   "node-library": {
-    "sample-youtube": {
-      "parent": "navigation",
-      "createTime": {
-        "_seconds": 1628605012,
-        "_nanoseconds": 512000000
-      },
-      "children": [],
-      "text": "<YoutubeEmbed embedId=\"O3UenuM-SYY\"/>",
-      "isRoot": false,
-      "creatorId": "admin",
-      "type": "action",
-      "subCollection": {}
-    },
-    "sample-node": {
-      "children": [],
-      "isRoot": false,
-      "type": "action",
-      "createTime": {
-        "_seconds": 1628604968,
-        "_nanoseconds": 989000000
-      },
-      "parent": "navigation",
-      "text": "This is one more test node. Nodes can't be deleted, only edited. Try creating a node and hitting the little pencil icon to the top right.\n\nNodes can only be edited by the person who created them on the machine and browser they used to create them. Keep that in mind! If you are the administrator of this website, it is possible for me to grant you an admin role which allows you to override this restriction.\n\n\\- Pat",
-      "creatorId": "admin",
-      "subCollection": {}
-    },
-    "alias": {
-      "parent": "navigation",
-      "createTime": {
-        "_seconds": 1628605049,
-        "_nanoseconds": 194000000
-      },
-      "creatorId": "admin",
-      "children": [],
-      "text": "### Alias\nCreate an alias to a node so you can easily direct link to it, e.g. `parm.app?focus=google-me`.\n\n<Alias/>",
-      "isRoot": false,
-      "type": "action",
-      "subCollection": {}
-    },
     "navigation": {
       "id": "navigation",
       "text": "\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"about\"\n  href=\"/?focus=about\"\n>\n  About\n</ListItem>\n",
       "type": "action",
       "creatorId": "admin",
       "createTime": {
-        "_seconds": 1628574420,
-        "_nanoseconds": 258000000
+        "_seconds": 0,
+        "_nanoseconds": 0
       },
       "parent": null,
-      "children": [
-        "2itEU8UwGWaRtfBVhna7",
-        "IY02oUWGcXLKMrTPo8t5",
-        "NQuuc3VnvGtX3pRJT2qy",
-        "sioYjfDHXdDGTZAe17b2",
-        "F1YCvtaQ3bFTeCqze7DW",
-        "AKmMdBQVXeUa6ZTrsXDm",
-        "euRHsk9RVc26rxRuKHgk",
-        "1yxKFRen6GRBvVKBz0zw",
-        "hhbEobDEX8uvPVIyA4ZP"
-      ],
+      "children": [],
       "isRoot": true,
       "subCollection": {}
     },
@@ -71,22 +22,61 @@
       "type": "action",
       "text": "Hello there!\n\nThis site is powered by the same source code that powers [parm.app](https://parm.app/). Everything in this box is inside a \"node\". You can enter whatever you want in this node, including `markdown`, React components, and more.\n\nThe website is even partially built via these nodes. For instance, the navigation menu in the sidebar is handled via a special named node called `navigation`. Here is the source text for that node:\n\n```\n<ListItem\n  button\n  component=\"a\"\n  aria-label=\"Create\"\n  href=\"/?focus=create\"\n>\n  Create\n</ListItem>\n```\n\nThere's lots of different custom React components that are allowlisted for use in a node. For example, `<DateSubtracter/>` is one that is easy to use because it does not require any props. However, some custom React components do require props. To learn what components are available (and how to use them) I recommend checking out the source code of the Markdown component [here](https://github.com/prmichaelsen/parm/blob/master/apps/f5/src/app/Markdown.tsx).\n\nBy the way, you can even see the `DateSubstracter` in action right here!\n\n---\n\n\n<DateSubtracter/>\n\n<br/>\n\n<br/>\n\n---\n\nI made this component to keep track of how long we'd been in quarantine during coronavirus.\n\nThere's lots of fancy tricks packed into this app (and complimentarily, lots of bugs). Try the dark mode!\n\nTo create a new node, just enter some text into that \"Improvise\" box and click the `+` icon.\n\nWell, that's it! Hope you liked the tour and are interested in building something neat.\n\nCheers,\n\nPatrick",
       "createTime": {
-        "_seconds": 1628604935,
-        "_nanoseconds": 999000000
+        "_seconds": 100,
+        "_nanoseconds": 0
       },
       "subCollection": {}
     },
-    "email-register": {
-      "text": "<EmailRegister/>",
-      "createTime": {
-        "_seconds": 1628604979,
-        "_nanoseconds": 391000000
-      },
+    "sample-node": {
+      "children": [],
       "isRoot": false,
       "type": "action",
+      "createTime": {
+        "_seconds": 90,
+        "_nanoseconds": 0
+      },
+      "parent": "navigation",
+      "text": "This is one more test node. Nodes can't be deleted, only edited. Try creating a node and hitting the little pencil icon to the top right.\n\nNodes can only be edited by the person who created them on the machine and browser they used to create them. Keep that in mind! If you are the administrator of this website, it is possible for me to grant you an admin role which allows you to override this restriction.\n\n\\- Pat",
+      "creatorId": "admin",
+      "subCollection": {}
+    },
+    "user-id": {
+      "text": "Your user id is:\n\n<UserId/>",
+      "parent": "navigation",
+      "type": "action",
+      "createTime": {
+        "_seconds": 50,
+        "_nanoseconds": 0
+      },
+      "isRoot": false,
+      "children": [],
+      "creatorId": "admin",
+      "subCollection": {}
+    },
+    "image-uploader": {
+      "text": "### image uploader plus\nuploads images and then provides quick \"click to copy\" shortcut. to include an image in your posts, create a new post with the contents: `![image description](https://the-copied-url)` \n\n<ImgUploaderPlus/>",
+      "isRoot": false,
       "children": [],
       "parent": "navigation",
       "creatorId": "admin",
+      "type": "action",
+      "createTime": {
+        "_seconds": 40,
+        "_nanoseconds": 40
+      },
+      "subCollection": {}
+    },
+    "create-alias": {
+      "creatorId": "admin",
+      "createTime": {
+        "_seconds": 30,
+        "_nanoseconds": 0
+      },
+      "parent": "navigation",
+      "children": [],
+      "type": "action",
+      "isRoot": false,
+      "text": "### Alias\nCreate an alias to a node so you can easily direct link to it, e.g. `parm.app?focus=google-me`.\n\n<Alias/>",
       "subCollection": {}
     }
   }
