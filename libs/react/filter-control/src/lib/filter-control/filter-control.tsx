@@ -49,6 +49,7 @@ export const useFilter: UseFilter = () => {
   } = useField({
     value: '',
     label: 'Search',
+    type: 'text',
   });
 
   const filter = filterFactory(value);

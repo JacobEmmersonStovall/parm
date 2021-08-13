@@ -8,9 +8,16 @@ import RemoveIcon from '@material-ui/icons/Remove';
 // https://react-dropzone-uploader.js.org/docs/examples
 
 /* eslint-disable-next-line */
-export interface ReactFileUploadProps {
+export type ReactFileUploadProps = {
+  type: 'url',
   url: string,
+} | ReactFileUploadOnSubmitProps;
+
+export interface ReactFileUploadOnSubmitProps {
+  type: 'onsubmit',
+  onSubmit: IDropzoneProps['onSubmit'],
 }
+
 
 
 const Submit = (props: ISubmitButtonProps) => {
@@ -104,9 +111,6 @@ const Preview = (props: IPreviewProps) => {
           title: {name}
         </div>
         <div>
-         progress: {Math.round(percent)}%
-        </div>
-        <div>
           status: {status}
         </div>
         </Grid>
@@ -132,13 +136,18 @@ const Preview = (props: IPreviewProps) => {
 }
 
 export const ReactFileUpload = (props: ReactFileUploadProps) => {
-  const { url } = props;
+  let url;
+  let onSubmit;
+  let onChangeStatus;
+  if (props.type === 'url') {
+    url = props.url;
+  }
+  if (props.type === 'onsubmit') {
+    onSubmit = props.onSubmit;
+    // onSubmit = props.onChangeStatus;
+  }
   const getUploadParams = () => {
     return { url }
-  }
-
-  const handleChangeStatus = ({ meta }, status) => {
-    console.log(status, meta)
   }
 
   const handleSubmit: IDropzoneProps['onSubmit'] = (files, allFiles) => {
@@ -147,9 +156,9 @@ export const ReactFileUpload = (props: ReactFileUploadProps) => {
 
   return (
     <Dropzone
-      getUploadParams={getUploadParams}
-      onChangeStatus={handleChangeStatus}
-      onSubmit={handleSubmit}
+      getUploadParams={url ? getUploadParams : null}
+      onChangeStatus={onChangeStatus}
+      onSubmit={onSubmit || handleSubmit}
       SubmitButtonComponent={Submit}
       PreviewComponent={Preview}
       LayoutComponent={Layout}

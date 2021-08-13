@@ -1,15 +1,13 @@
 import React, { useState, useCallback } from 'react';
-// import ImageUploader from 'react-images-upload';
 import Grid from '@material-ui/core/Grid';
 import { useImageUpload } from './firebase';
-import IconButton from '@material-ui/core/IconButton';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'; 
 import Button from '@material-ui/core/Button';
 import { getImageUrl } from './utils';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-const ImageUploader = () => <div></div>;
+import { ReactFileUpload, ReactFileUploadOnSubmitProps } 
+  from '@parm/react/file-upload';
+import { IFileWithMeta } from 'react-dropzone-uploader';
   
-type onChange = (files: File[], pictures: string[]) => void
 const initialPending: File[] = [];
 const initialCompleted: string[] = [];
 
@@ -33,55 +31,30 @@ export const ImgUploaderPlus = () => {
   const [pending, setPending] = useState([...initialPending]);
   const [completed, setCompleted] = useState([...initialCompleted]);
   const { uploadImage } = useImageUpload();
-  const onDrop: onChange = (pictures) => {
-    setPending([
-      ...pictures
-    ]);
-  }
 
-  const upload = useCallback(async () => {
-    await Promise.all(pending.map(async f => {
-      try {
-        const result = await uploadImage(f);
-        const url = getImageUrl({filename: `${result.ref.name}`});
-        setCompleted(prev => [
-          url,
-          ...prev,
-        ]);
-        console.log(url);
-      } catch (e) {
-        console.log(e)
-      }
-    }));
-  }, [pending]);
+  const onSubmit: ReactFileUploadOnSubmitProps['onSubmit'] =
+    useCallback(async function (files: IFileWithMeta[], allFiles: IFileWithMeta[]) {
+      await Promise.all(files.map(async fileMeta => {
+        try {
+          const result = await uploadImage(fileMeta.file);
+          const url = getImageUrl({ filename: `${result.ref.name}` });
+          setCompleted(prev => [
+            url,
+            ...prev,
+          ]);
+          console.log(url);
+        } catch (e) {
+          console.log(e)
+        }
+      }));
+    }, []);
 
   return (
     <>
-      <ImageUploader
-        withIcon={true}
-        withPreview={true}
-        buttonText='Choose images'
-        onChange={onDrop}
-        imgExtension={['.jpg', '.gif', '.png', '.jpeg']}
-        maxFileSize={5242880}
+      <ReactFileUpload
+        onSubmit={onSubmit}
+        type='onsubmit'
       />
-      <Grid container direction="row-reverse" style={{ marginBottom: '5px' }}>
-        <Grid item>
-          <Button
-            onClick={upload}
-            disabled={pending.length === 0}
-          >
-            <Grid container spacing={1}>
-              <Grid item>
-                Upload
-              </Grid>
-              <Grid item>
-                <ArrowUpwardIcon />
-              </Grid>
-            </Grid>
-          </Button>
-        </Grid>
-      </Grid>
       <Grid 
         container
         alignItems='center'
@@ -116,7 +89,7 @@ export const ImgUploaderPlus = () => {
                       marginRight: '10px',
                       marginLeft: '10px',
                     }}>
-                      Click to Copy
+                      click to copy
                     </span>
                     <span style={{display: 'inline', marginRight: '10px'}}>
                       <FileCopyIcon />
