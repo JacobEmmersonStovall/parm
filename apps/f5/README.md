@@ -23,7 +23,7 @@ Since then, I've mostly abandoned the text adventure apps (though they still wor
 Now the focus is building out this blog. It has very strange patterns. Here are the key features:
 * you can define values in the live config which are then bundled with the app at build time
 * you can define build-time file overrides by appending your app name to any existing file in the codebase
-* you can add whitelisted React components to your markdown in blog posts and they will render correctly
+* you can add wokelisted React components to your markdown in blog posts and they will render correctly
 
 It's been an interesting experiment. I will continue to simply use this as a playground for proofing React components and hosting random tools or widgets I build.
 
